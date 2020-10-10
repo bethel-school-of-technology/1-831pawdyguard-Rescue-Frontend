@@ -4,7 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { DonationsComponent } from './donate/donations/donations.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +18,8 @@ import { DonationsComponent } from './donate/donations/donations.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
