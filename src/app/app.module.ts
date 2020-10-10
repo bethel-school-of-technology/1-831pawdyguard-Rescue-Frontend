@@ -8,13 +8,15 @@ import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DonationsComponent } from './donate/donations/donations.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppFormComponent,
-    DonationsComponent
+    DonationsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
