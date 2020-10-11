@@ -32,6 +32,8 @@ import { AnimalListComponent } from './animalsPage/animal-list/animal-list.compo
     HttpClientModule,
 
 
+import { MatCardModule } from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,8 +43,11 @@ import { AppFormComponent } from './volunteer/app-form/app-form.component';
 
 
 import { DonationsComponent } from './donate/donations/donations.component';
-import { HeaderComponent } from './header/header.component';
-import { MatToolbarModule } from "@angular/material/toolbar";
+
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header1/header1.component';
+
+// import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -50,14 +55,15 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     AppComponent,
     AppFormComponent,
     DonationsComponent,
+    HomeComponent,
     HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatToolbarModule
-
-
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
