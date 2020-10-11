@@ -21,7 +21,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   constructor(public animalsService: AnimalsService) {}
 
   ngOnInit() {
-    this.animals = this.animalsService.getAnimals();
+    this.animalsService.getAnimals();
     this.animalsSub = this.animalsService
       .getAnimalUpdateListener()
       .subscribe((animals: Animal[]) => {
