@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -28,6 +29,9 @@ import { AnimalListComponent } from './animalsPage/animal-list/animal-list.compo
     MatToolbarModule,
     MatExpansionModule,
 
+    HttpClientModule,
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +56,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, MatToolbarModule
+
 
   ],
   providers: [],
