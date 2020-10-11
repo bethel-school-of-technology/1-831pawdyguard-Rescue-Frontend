@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-home = {
-  title: '831 Pawdyguard Rescue',
-  subtitle: 'Established',
-  content: 'more info',
-  image: '',
+  home = {
+    title: '831 Pawdyguard Rescue',
+    subtitle: 'Established in 2019',
+    content: 'information, information',
+    image: 'assets/images /pitter.jpg'
 };
   constructor() { }
 
