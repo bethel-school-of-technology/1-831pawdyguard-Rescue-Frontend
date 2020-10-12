@@ -1,17 +1,86 @@
-<p>Volunteer Application Form</p>
+<div class="outer-form-container">
 
-<form >
-  <mat-form-field >
-    <mat-label>First Name</mat-label>
-    <input matInput type="text" name="fName" placeholder="First Name">
-  
-  </mat-form-field>
-  <mat-form-field >
-    <input  matInput type="text" name="lName" placeholder="Last Name" >
-   
-  </mat-form-field>
+  <div class="form-container">
+    <form class="form-group">
 
+      <h4>Volunteer Information</h4>
+      <p>Name </p>
+      <div>
+        <mat-form-field class="form-field" style="width:50vw" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput type="text" name="fName">
 
-  <button mat-raised-button color="primary" type="submit">Submit</button>
-</form>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput type="text" name="lName">
 
+        </mat-form-field>
+      </div>
+
+    <p>Address</p>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Street</mat-label>
+        <input matInput type="text" name="street1">
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Street Line 2</mat-label>
+        <input matInput type="text" name="street2">
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput type="text" name="city">
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>State / Province</mat-label>
+        <input matInput type="text" name="state">
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Postal Zip</mat-label>
+        <input matInput type="text" name="zip">
+      </mat-form-field>
+
+      <p>Email</p>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" name="email">
+      </mat-form-field>
+
+      <p>Phone Number</p>
+      <p>Area Code + Phone Number</p>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" name="phone">
+      </mat-form-field>
+
+      <p>Volunteer Details</p>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Something about you</mat-label>
+        <textarea matInput placeholder="Your ability to volunteer..."></textarea>
+      </mat-form-field>
+
+      <p>Skills and experience</p>
+      <!-- Radio Buttons, if possible-->
+      <p>Here should be some radio buttons</p>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Do you have experience with pet-care or animal welfare?</mat-label>
+
+        <textarea matInput placeholder="Please describe..."></textarea>
+      </mat-form-field>
+
+      <p>Here should be some checkboxes</p>
+      <!-- Check boxes with volunteer options, if possible-->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>What type of volunteer work interest you?</mat-label>
+
+        <textarea matInput placeholder="Please describe..."></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
