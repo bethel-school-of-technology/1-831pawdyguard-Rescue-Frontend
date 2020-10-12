@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   home = {
-    title: '831 Pawdyguard Rescue',
-    subtitle: 'Established in 2019',
-    content: 'information, information',
+    title: '831pawdyguard rescue',
+    subtitle: 'Established in 2018',
+    content: '',
     image: 'assets/images/pitter.jpg'
  }
 

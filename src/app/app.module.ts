@@ -12,12 +12,30 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { AnimalCreateComponent } from './animalsPage/animal-create/animal-create.component';
 import { AnimalListComponent } from './animalsPage/animal-list/animal-list.component';
+import { AppFormComponent } from './volunteer/app-form/app-form.component';
+import { DonationsComponent } from './donate/donations/donations.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
-  declarations: [AppComponent, AnimalCreateComponent, AnimalListComponent],
+  declarations: [
+    AppComponent,
+    AnimalCreateComponent,
+    AnimalListComponent,
+    AppFormComponent,
+    DonationsComponent,
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent
+
+  ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -28,44 +46,11 @@ import { AnimalListComponent } from './animalsPage/animal-list/animal-list.compo
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-
     HttpClientModule,
-
-
-import { MatCardModule } from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AppFormComponent } from './volunteer/app-form/app-form.component';
-
-
-
-import { DonationsComponent } from './donate/donations/donations.component';
-
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header1/header1.component';
-
-// import { HeaderComponent } from './header/header.component';
-
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    AppFormComponent,
-    DonationsComponent,
-    HomeComponent,
-    HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatCardModule,
-    BrowserAnimationsModule,
-    MatToolbarModule
-  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}
