@@ -21,7 +21,7 @@ import { DonationsComponent } from './donate/donations/donations.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { LoginComponent} from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     DonationsComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
 
   ],
 
