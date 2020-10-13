@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
     subtitle: 'Established in 2019',
     content: 'information, information',
     image: 'assets/images/pitter.jpg'
+
 };
+
   constructor() { }
 
   ngOnInit(): void {

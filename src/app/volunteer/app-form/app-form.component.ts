@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-app-form',
+  selector: 'app-volform',
   templateUrl: './app-form.component.html',
   styleUrls: ['./app-form.component.css']
 })
@@ -13,3 +13,6 @@ export class AppFormComponent implements OnInit {
   }
 
 }
+// onAddVolunteer(){
+//   console.log('Volunteer applied');
+// }
