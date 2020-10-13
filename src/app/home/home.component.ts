@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
     title: '831 Pawdyguard Rescue',
     subtitle: 'Established in 2019',
     content: 'information, information',
-    image: 'assets/images /pitter.jpg'
+    image: 'assets/images/pitter.jpg'
 };
   constructor() { }
 
