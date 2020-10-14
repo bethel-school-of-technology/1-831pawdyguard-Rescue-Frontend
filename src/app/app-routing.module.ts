@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'app-form', component: AppFormComponent },
   { path: 'animal-list', component: AnimalListComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
 ];
 
 
