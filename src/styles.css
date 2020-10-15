@@ -2,3 +2,14 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-toolbar{
+  justify-content:space-between;
+}
+/* .routerlink {
+  color: white;
+} */
+
+.light{
+  font-size: 50px;
+}
