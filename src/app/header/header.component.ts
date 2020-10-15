@@ -1,4 +1,3 @@
-import { componentFactoryName } from '@angular/compiler';
 import { Component } from "@angular/core";
 
 @Component ({
