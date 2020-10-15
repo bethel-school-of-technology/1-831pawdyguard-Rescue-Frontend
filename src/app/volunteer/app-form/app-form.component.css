@@ -1,3 +1,9 @@
+:host {
+  font-style: italic;
+  color: rgba(73, 148, 106, 0.87);
+  display: block;
+  border: 1px solid black;
+}
 .outer-form-container{
   width: 60%;
   text-align: left;
@@ -5,7 +11,7 @@
 
 .form-container{
   width: 400 px; 
-  margin: 0 px auto; 
+  margin: 100 px auto; 
   margin-top: 200 px
 }
 

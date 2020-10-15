@@ -26,7 +26,19 @@ export class AppFormComponent implements OnInit {
       return;
     }
     //console.log(form.value);
-    this.volunteerService.createVolunteer(form.value.fname, form.value.lName);
+    this.volunteerService.createVolunteer(
+      form.value.fname, 
+      form.value.lname, 
+      form.value.street,
+      form.value.street2, 
+      form.value.city, 
+      form.value.state,
+      form.value.zip, 
+      form.value.email, 
+      form.value.phone,
+      form.value.details, 
+      form.value.skills
+      );
     form.resetForm();
   }
 
