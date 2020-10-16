@@ -1,0 +1,42 @@
+:host {
+  font-style: italic;
+  color: rgba(73, 148, 106, 0.87);
+  display: block;
+  border: 1px solid black;
+}
+.outer-form-container{
+  border:1px solid red;
+    position: centre;
+    top: 50%;
+    left: 50%; 
+    width:100%;
+   }
+
+   
+   
+.form-container{
+  min-width: 120px;
+  width: 400 px; 
+  margin: 100 px auto; 
+  margin-top: 200 px;
+  padding-left: 3rem;
+}
+
+.form-field{
+  display: block
+}
+/**** The radio buttons  ***/
+.mat-radio-button {
+  display: block;
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}

@@ -1,0 +1,16 @@
+<h1>Animals Available for Adoption</h1>
+<mat-card>
+  <form (submit)="onAddAnimal(animalForm)" #animalForm="ngForm">
+    <mat-form-field>
+      <input matInput type="text" name="title" ngModel required minlength="3" placeholder="Name of Animal"
+        #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter Animal's Name</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput rows="4" name="content" ngModel required placeholder="Information About this Animal"
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please enter Animal's Information</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">SAVE</button>
+  </form>
+</mat-card>
