@@ -82,10 +82,19 @@
 
         <p>Skills and experience</p>
         <!-- Radio Buttons, if possible-->
-        <p>Here could be some radio buttons</p>
+        <div class="row">
+          <div class="col">
+            <mat-radio-group name="experience" >
+              <mat-label>Do you own an animal?</mat-label>
+              <mat-radio-button value="free">Yes</mat-radio-button>
+              <mat-radio-button value="priority">No</mat-radio-button>
+             
+            </mat-radio-group>
+          </div>
+        </div>
         <mat-form-field class="form-field" appearance="outline">
           <mat-label>Do you have experience with pet-care or animal welfare?</mat-label>
-          <textarea matInput rows="6" name="experience" ngModel required placeholder="Please describe..."
+          <textarea matInput rows="6" name="skills" ngModel required placeholder="Please describe..."
             #expInput="ngModel"></textarea>
         </mat-form-field>
 
