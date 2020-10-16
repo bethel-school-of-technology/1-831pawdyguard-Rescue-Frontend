@@ -8,15 +8,14 @@ import { AngularMaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { AppFormComponent } from './volunteer/app-form/app-form.component';
-
 import { AnimalCreateComponent } from './animalsPage/animal-create/animal-create.component';
 import { AnimalListComponent } from './animalsPage/animal-list/animal-list.component';
-
+import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { DonationsComponent } from './donate/donations/donations.component';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header1/header1.component';
-
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent} from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +25,12 @@ import { HeaderComponent } from './header1/header1.component';
     AppComponent,
     AppFormComponent,
     DonationsComponent,
+    HeaderComponent,
     HomeComponent,
-    HeaderComponent
-  ],
+    FooterComponent,
+    LoginComponent
 
+  ],
 
   imports: [
     BrowserModule,
@@ -41,7 +42,9 @@ import { HeaderComponent } from './header1/header1.component';
     BrowserAnimationsModule
 
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}
