@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Animal } from './animal.model';
 
@@ -12,9 +13,21 @@ export class AnimalsService {
   constructor(private http: HttpClient) {}
 
   getAnimals() {
-    this.http.get<{ message: string, animals: Animal[] }>('http://localhost:3000/animalsPage')
-    .subscribe((animalData) => {
-      this.animals = animalData.animals;
+    this.http
+    .get<{ message: string, animals: any }>(
+      'http://localhost:3000/animalsPage'
+      )
+    .pipe(map((animalData) => {
+      return animalData.animals.map(animal => {
+        return {
+          title: animal.title,
+          content: animal.content,
+          id: animal._id
+        };
+      });
+    }))
+    .subscribe((transformedAnimals) => {
+      this.animals = transformedAnimals;
       this. animalsUpdated.next([...this.animals]);
     });
   }
