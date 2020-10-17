@@ -13,7 +13,6 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   // animals = [
   //   { title: 'Grayson', content: '1st Cat. Gorgeous!' },
   //   { title: 'Alita', content: '2nd Cat. Hunter!' },
-  //   { title: 'Naala', content: "3re Cat. Jeff's cat - not available!" },
   // ];
   animals: Animal[] = [];
   private animalsSub: Subscription;
@@ -27,6 +26,10 @@ export class AnimalListComponent implements OnInit, OnDestroy {
       .subscribe((animals: Animal[]) => {
         this.animals = animals;
       });
+  }
+
+  onDelete(animalId: string) {
+    this.animalsService.deleteAnimal(animalId);
   }
 
   ngOnDestroy() {
