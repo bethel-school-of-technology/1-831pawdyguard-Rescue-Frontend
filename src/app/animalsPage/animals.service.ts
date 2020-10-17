@@ -45,4 +45,13 @@ export class AnimalsService {
       this.animalsUpdated.next([...this.animals]);
     });
   }
+
+  deleteAnimal(animalId: string) {
+    this.http.delete('http://localhost:3000/animalsPage' + animalId)
+    .subscribe(() => {
+      const updatedAnimals = this.animals.filter(animal => animal.id !== animalId);
+      this.animals = updatedAnimals;
+      this.animalsUpdated.next([...this.animals]);
+    });
+  }
 }
