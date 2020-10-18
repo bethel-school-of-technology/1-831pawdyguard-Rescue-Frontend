@@ -38,9 +38,10 @@ export class AnimalsService {
 
   addAnimal(title: string, content: string) {
     const animal: Animal = { id: null, title: title, content: content };
-    this.http.post<{ message: string }>('http://localhost:3000/animalsPage', animal)
+    this.http.post<{ message: string, animalId: string }>('http://localhost:3000/animalsPage', animal)
     .subscribe(responseData => {
-      console.log(responseData.message);
+      const id = responseData.animalId;
+      animal.id = id;
       this.animals.push(animal);
       this.animalsUpdated.next([...this.animals]);
     });
