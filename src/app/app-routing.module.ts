@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'donations', component: DonationsComponent },
   { path: 'create', component: AnimalCreateComponent },
+  { path: 'edit/:animalId', component: AnimalCreateComponent },
   { path: 'app-form', component: AppFormComponent },
   { path: 'animal-list', component: AnimalListComponent },
   { path: 'home', component: HomeComponent },
