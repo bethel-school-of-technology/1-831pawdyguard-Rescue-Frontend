@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ export class DonationsFormComponent {
  enteredValue = '';
  newDonation = ' NO CONTENT';
 
-  onAddDonation() {
+  onAddDonation(form:NgForm) {
             this.newDonation = this.enteredValue;
   }
 
