@@ -27,6 +27,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent} from './auth/login/login.component';
+import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { LoginComponent} from './auth/login/login.component';
 
     HomeComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    VolMainComponent
 
 
   ],
