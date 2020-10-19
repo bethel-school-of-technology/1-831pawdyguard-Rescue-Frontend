@@ -1,0 +1,18 @@
+body {
+  background-color: powderblue;
+}
+
+img {
+ align-self:  center;
+}
+
+div {
+  height: 200px;
+  width: 50%;
+  text-align: center;
+  color: darkblue;
+}
+div {
+  color: darkblue;
+  border: 2px purple;
+}

@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'donations', component: DonationsComponent },
   { path: 'create', component: AnimalCreateComponent },
   { path: 'vol-main', component: VolMainComponent },
+  { path: 'edit/:animalId', component: AnimalCreateComponent },
   { path: 'animal-list', component: AnimalListComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

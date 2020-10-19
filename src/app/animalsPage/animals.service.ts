@@ -36,12 +36,38 @@ export class AnimalsService {
     return this.animalsUpdated.asObservable();
   }
 
+  getAnimal(id: string) {
+    return this.http.get<{_id: string; title: string; content: string }>("http://localhost:3000/animalsPage/" + id);
+  }
+
   addAnimal(title: string, content: string) {
     const animal: Animal = { id: null, title: title, content: content };
-    this.http.post<{ message: string }>('http://localhost:3000/animalsPage', animal)
+    this.http.post<{ message: string, animalId: string }>('http://localhost:3000/animalsPage', animal)
     .subscribe(responseData => {
-      console.log(responseData.message);
+      const id = responseData.animalId;
+      animal.id = id;
       this.animals.push(animal);
+      this.animalsUpdated.next([...this.animals]);
+    });
+  }
+
+  updateAnimal(id: string, title: string, content: string ) {
+    const animal: Animal = { id: id, title: title, content: content };
+    this.http.put("http://localhost:3000/animalsPage/" + id, animal)
+      .subscribe(response => {
+        const updatedAnimals = [...this.animals];
+        const oldAnimalIndex = updatedAnimals.findIndex(a => a.id === animal.id);
+        updatedAnimals[oldAnimalIndex] = animal;
+        this.animals = updatedAnimals;
+        this.animalsUpdated.next([...this.animals]);
+      });
+  }
+
+  deleteAnimal(animalId: string) {
+    this.http.delete('http://localhost:3000/animalsPage' + animalId)
+    .subscribe(() => {
+      const updatedAnimals = this.animals.filter(animal => animal.id !== animalId);
+      this.animals = updatedAnimals;
       this.animalsUpdated.next([...this.animals]);
     });
   }
