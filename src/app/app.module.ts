@@ -33,7 +33,7 @@ import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
     DonationsFormComponent,
     HomeComponent,
     FooterComponent,
-    VolMainComponent
+    VolMainComponent,
     LoginComponent
   ],
 
