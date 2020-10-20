@@ -1,4 +1,24 @@
-mat-form-field
- {
-  width: 50%;
+
+
+
+
+mat-card{
+  margin-top: 2rem;
+  width:50%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+mat-card-image{
+  width:50%;
+  height:auto;
+}
+img-cont{
+  width:80%;
+}
+#quote{
+  padding: 2px;
+  color: palevioletred;
+  font-weight: 800;
+
 }
