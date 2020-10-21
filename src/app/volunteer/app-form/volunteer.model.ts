@@ -10,6 +10,7 @@ export interface Volunteer {
   email: string;
   phone: string;
   details:string;
+  ownsAnimal:string;
   skills: string;
 
 }

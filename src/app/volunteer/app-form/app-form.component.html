@@ -4,24 +4,22 @@
 <div class="outer-form-container">
   <h2>Volunteer Information</h2>
   <div class="form-container">
-    <!-- <form class="input-form"></form> -->
-
     
-
-    <!-- Submit event with #local reference -->
+  <!-- Template driven form -->
+      <!-- Submit event with #local reference -->
     <form class="input-form" (submit)="onAddVolunteer(volunteerForm)" #volunteerForm="ngForm">
       <p>Name </p>
       <div class="vname">
         <mat-form-field class="form-field" >
           <mat-label>First Name</mat-label>
-          <input matInput type="text" name="fname" ngModel required placeholder="First Name" #fnInput="ngModel">
-          <mat-error *ngIf="fnInput.invalid">Please enter your first name</mat-error>
+          <input matInput type="text" name="fname" ngModel required minlength="2" placeholder="First Name" #fnInput="ngModel">
+          <mat-error *ngIf="fnInput.invalid">Please enter a first name</mat-error>
 
         </mat-form-field>
         <mat-form-field class="form-field" >
           <mat-label>Last Name</mat-label>
-          <input matInput type="text" name="lname" ngModel required placeholder="Last Name" #lnInput="ngModel">
-          <mat-error *ngIf="lnInput.invalid">Please enter your last name</mat-error>
+          <input matInput type="text" name="lname" ngModel required minlength="2" placeholder="Last Name" #lnInput="ngModel">
+          <mat-error *ngIf="lnInput.invalid">Please enter a last name</mat-error>
         </mat-form-field>
       </div>
 
@@ -35,7 +33,7 @@
       <mat-form-field class="form-field" >
         <mat-label>Street Line 2</mat-label>
         <input matInput type="text" name="street2" ngModel placeholder="Address Addition" #str2Input="ngModel">
-        <mat-error *ngIf="str2Input.invalid">Please enter valid street information</mat-error>
+        <mat-error *ngIf="str2Input.invalid">Please enter valid addition</mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-field" >
@@ -52,8 +50,8 @@
 
       <mat-form-field class="form-field" >
         <mat-label>Postal Zip</mat-label>
-        <input matInput type="text" name="zip" ngModel required placeholder="Zip Code" #zipInput="ngModel">
-        <mat-error *ngIf="zipInput.invalid">Please enter a zip code</mat-error>
+        <input matInput type="text" name="zip" ngModel required maxlength="5" placeholder="Zip Code" #zipInput="ngModel">
+        <mat-error *ngIf="zipInput.invalid">Please enter a valid zip code</mat-error>
       </mat-form-field>
 
 
@@ -85,19 +83,43 @@
       <p>Skills and experience</p>
       <div class="row">
         <div class="col">
-          <mat-radio-group name="experience">
-            <mat-label>Do you own an animal?</mat-label>
-            <mat-radio-button value="free">Yes</mat-radio-button>
-            <mat-radio-button value="priority">No</mat-radio-button>
+          <mat-label>Do you own an animal?</mat-label>
+          <mat-radio-group name="ownsAnimal" ngModel #ownsAnimal="ngModel" >
+            
+            <mat-radio-button value="yes">Yes</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
 
           </mat-radio-group>
+          <br>{{ownsAnimal.valid}}
+          <br>You picked: {{ownsAnimal.value}}
         </div>
       </div>
+
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Do you have experience with pet-care or animal welfare?</mat-label>
         <textarea matInput rows="6" name="skills" ngModel required placeholder="Please describe..."
           #expInput="ngModel"></textarea>
       </mat-form-field>
+
+      <div class="row">
+        <div class="col">   
+      <mat-label>What would you like to do?</mat-label>
+<section name="volTypes" ngModel #volTypes="ngModel">
+  <mat-checkbox value="foster">Foster </mat-checkbox>
+  <mat-checkbox value="fundraise">Fundraising</mat-checkbox>
+  <mat-checkbox value="transport">Transport</mat-checkbox>
+  <mat-checkbox value="fundraise">Fundraising </mat-checkbox>
+</section>
+
+<br> {{volTypes.value}}
+</div>
+</div>
+
+   
+    <br>You picked: {{volTypes.value}}
+ 
+
+
 
 <p>Thank you, for your time!</p>
       <!-- form footer / end -->
