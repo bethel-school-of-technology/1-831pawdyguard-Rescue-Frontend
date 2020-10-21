@@ -6,6 +6,7 @@ import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { AnimalListComponent } from './animalsPage/animal-list/animal-list.component';
 import { HomeComponent} from './home/home.component'
 import { LoginComponent } from './auth/login/login.component';
+import { DonationsFormComponent } from './donate/donations-form/donations-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'app-form', component: AppFormComponent },
   { path: 'animal-list', component: AnimalListComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'donations-form', component: DonationsFormComponent }
 ];
 
 
