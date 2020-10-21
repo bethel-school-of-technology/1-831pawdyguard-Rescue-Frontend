@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vol-main.component.css']
 })
 export class VolMainComponent implements OnInit {
-
+hasAnimal: boolean
   constructor() { }
 
   ngOnInit(): void {
