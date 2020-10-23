@@ -18,14 +18,13 @@ export const mediaType = (
 //Uint8Array creates new array of 8bit unsigned integers; lets us look into file to parse media type
 //if I get an error use fileReader.result as Array Buffer instead of fileReader.result
 const array = new Uint8Array(fileReader.result as ArrayBuffer).subarray(0, 4);
-        let header = '';
+        let header = "";
         let isValid = false;
         for (let i = 0; i < array.length; i++) {
           header += array[i].toString(16);
         }
         switch (header) {
-//these valid patterns show up in PNG and JPEG
-          case '89504e47':
+          case '89504e47':  //these valid patterns show up in PNG and JPEG
             isValid = true;
             break;
           case 'ffd8ffe0':

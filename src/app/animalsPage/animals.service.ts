@@ -2,33 +2,43 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 import { Animal } from './animal.model';
 
 @Injectable({ providedIn: 'root' })
 export class AnimalsService {
   private animals: Animal[] = [];
-  private animalsUpdated = new Subject<Animal[]>();
+  private animalsUpdated = new Subject<{ animals: Animal[]; animalCount: number }>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
-  getAnimals() {
+  getAnimals(animalsPerPage: number, currentPage: number) {
+    const queryParams = `?pagesize=${animalsPerPage}&page=${currentPage}`;
     this.http
-    .get<{ message: string, animals: any }>(
-      'http://localhost:3000/animalsPage'
+    .get<{ message: string; animals: any; maxAnimals: number }>(
+      'http://localhost:3000/animalsPage' + queryParams
       )
     .pipe(map((animalData) => {
-      return animalData.animals.map(animal => {
-        return {
-          title: animal.title,
-          content: animal.content,
-          id: animal._id
-        };
+      return {
+        animals: animalData.animals.map(animal => {
+          return {
+            title: animal.title,
+            content: animal.content,
+            id: animal._id,
+            imagePath: animal.imagePath
+          };
+        }),
+      maxAnimals: animalData.maxAnimals
+      };
+    })
+  )
+    .subscribe((transformedAnimalData) => {
+      this.animals = transformedAnimalData.animals;
+      this. animalsUpdated.next({
+        animals: [...this.animals],
+        animalCount: transformedAnimalData.maxAnimals
       });
-    }))
-    .subscribe((transformedAnimals) => {
-      this.animals = transformedAnimals;
-      this. animalsUpdated.next([...this.animals]);
     });
   }
 
@@ -37,38 +47,44 @@ export class AnimalsService {
   }
 
   getAnimal(id: string) {
-    return this.http.get<{_id: string; title: string; content: string }>("http://localhost:3000/animalsPage/" + id);
+    return this.http.get<{_id: string; title: string; content: string; imagePath: string }>("http://localhost:3000/animalsPage/" + id);
   }
 
-  addAnimal(title: string, content: string) {
-    const animal: Animal = { id: null, title: title, content: content };
-    this.http.post<{ message: string, animalId: string }>('http://localhost:3000/animalsPage', animal)
+  addAnimal(title: string, content: string, image: File) {
+    const animalData = new FormData();
+    animalData.append("title", title);
+    animalData.append("content", content);
+    animalData.append("image", image, title);
+    this.http.post<{ message: string, animal: Animal }>('http://localhost:3000/animalsPage', animalData)
     .subscribe(responseData => {
-      const id = responseData.animalId;
-      animal.id = id;
-      this.animals.push(animal);
-      this.animalsUpdated.next([...this.animals]);
+      this.router.navigate(['/']);  //check for correct routing '/'
     });
   }
 
-  updateAnimal(id: string, title: string, content: string ) {
-    const animal: Animal = { id: id, title: title, content: content };
-    this.http.put("http://localhost:3000/animalsPage/" + id, animal)
+  updateAnimal(id: string, title: string, content: string, image: File | string ) {
+    let animalData: Animal | FormData;
+    if (typeof image ==="object") {
+      animalData = new FormData();
+      animalData.append("id", id);
+      animalData.append("title", title);
+      animalData.append("content", content);
+      animalData.append("image", image, title);
+    } else {
+      animalData = {
+        id: id,
+        title: title,
+        content: content,
+        imagePath: image,
+      };
+    }
+    this.http
+    .put("http://localhost:3000/animalsPage/" + id, animalData)
       .subscribe(response => {
-        const updatedAnimals = [...this.animals];
-        const oldAnimalIndex = updatedAnimals.findIndex(a => a.id === animal.id);
-        updatedAnimals[oldAnimalIndex] = animal;
-        this.animals = updatedAnimals;
-        this.animalsUpdated.next([...this.animals]);
+        this.router.navigate(["/"]);
       });
   }
 
   deleteAnimal(animalId: string) {
-    this.http.delete('http://localhost:3000/animalsPage' + animalId)
-    .subscribe(() => {
-      const updatedAnimals = this.animals.filter(animal => animal.id !== animalId);
-      this.animals = updatedAnimals;
-      this.animalsUpdated.next([...this.animals]);
-    });
+    return this.http.delete('http://localhost:3000/animalsPage' + animalId)
   }
 }

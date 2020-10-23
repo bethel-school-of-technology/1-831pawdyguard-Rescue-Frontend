@@ -1,20 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
-import { AngularMaterialModule } from './material.module';
-import { AppRoutingModule } from './app-routing.module';
+
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AngularMaterialModule } from './material.module';
+
 import { AnimalCreateComponent } from './animalsPage/animal-create/animal-create.component';
 import { AnimalListComponent } from './animalsPage/animal-list/animal-list.component';
+
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { DonationsFormComponent } from './donate/donations-form/donations-form.component';
-// import { MatToolbarModule } from '@angular/material/toolbar'; moved to material.module.ts
 
 import { DonationsComponent } from './donate/donations/donations.component';
-import { HeaderComponent } from './header/header.component';
+
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent} from './auth/login/login.component';
@@ -25,9 +29,6 @@ import { SignupComponent } from './auth/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AnimalCreateComponent,
-    AnimalListComponent,
-    AppComponent,
     AppFormComponent,
     DonationsComponent,
     HeaderComponent,
@@ -36,17 +37,19 @@ import { SignupComponent } from './auth/signup/signup.component';
     FooterComponent,
     VolMainComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AnimalCreateComponent,
+    AnimalListComponent
   ],
 
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

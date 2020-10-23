@@ -1,8 +1,12 @@
 <mat-accordion multi="true" *ngIf="animals.length > 0">
   <mat-expansion-panel *ngFor="let animal of animals">
-    <mat-expansion-panel-header>
-      {{ animal.title }}
+    <mat-expansion-panel-header class="panel-header">
+      <img class="thumb-image" [src]="animal.imagePath" [alt]="animal.title">
+      <br> {{ animal.title }}
     </mat-expansion-panel-header>
+    <div class="animal-image">
+      <img [src]="animal.imagePath" [alt]="animal.title">
+    </div>
     <p>{{ animal.content }}</p>
     <mat-action-row>
       <a mat-button color="primary" [routerLink]="['/edit', animal.id]">EDIT</a>
@@ -10,4 +14,5 @@
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
+<mat-paginator [length]="totalAnimals" [pageSize]="animalsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)" *ngIf="animals.length > 0"></mat-paginator>
 <p class="info-text mat-body-1" *ngIf="animals.length <= 0">No Animals are available at this time.</p>
