@@ -16,6 +16,7 @@ import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { SignupComponent } from './auth/signup/signup.component'
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'vol-main', component: VolMainComponent },

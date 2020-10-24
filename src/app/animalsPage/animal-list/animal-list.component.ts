@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 
 import { Animal } from '../animal.model';
 import { AnimalsService } from '../animals.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-animal-list',
@@ -59,7 +60,11 @@ export class AnimalListComponent implements OnInit, OnDestroy {
       },
     );
   }
-
+// ************
+onAdoptRequest(form: NgForm){
+  console.log('Request for adoption send');
+}
+// ******
   ngOnDestroy() {
     this.animalsSub.unsubscribe();
     this.authStatusSub.unsubscribe();
