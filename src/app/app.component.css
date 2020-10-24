@@ -1,4 +1,10 @@
-/* main {
-  margin-top: 1rem;
+html {
+  position: relative;
+  min-height: 50%;
+}
 
-} */
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 200px;
+  
+}

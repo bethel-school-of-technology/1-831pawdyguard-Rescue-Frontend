@@ -6,3 +6,44 @@
 .info-text {
   text-align: center;
 }
+
+
+
+/* Adoption form   (G)*/
+mat-card{
+width: 40%;
+margin: auto;
+}
+.form-field
+{
+  width:80%;
+}
+.f-row{
+  display:block;
+  background-color:white;
+  align-self: center;
+
+  max-width: 50%;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  /*margin-top: 2rem;*/
+  margin-left: 2rem;
+  margin-right:auto;
+   }
+
+ .f-col{
+   margin-top: 2rem;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ /* Container to keep footer in check*/
+ .main-container {
+  min-height: 100%; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 2rem; /* height of your footer */
+ }
