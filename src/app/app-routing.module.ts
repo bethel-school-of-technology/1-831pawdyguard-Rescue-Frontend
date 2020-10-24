@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth-guard';
 
 import { AnimalCreateComponent } from './animalsPage/animal-create/animal-create.component';
 import { AnimalListComponent } from './animalsPage/animal-list/animal-list.component';
@@ -13,7 +14,7 @@ import { DonationsComponent } from './donate/donations/donations.component';
 
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { SignupComponent } from './auth/signup/signup.component'
-import { AuthGuard } from './auth/auth-guard';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},

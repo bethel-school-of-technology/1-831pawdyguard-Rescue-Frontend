@@ -16,7 +16,6 @@ export const mediaType = (
     (observer: Observer<{ [key: string]: any }>) => {
       fileReader.addEventListener('loadend', () => {
 //Uint8Array creates new array of 8bit unsigned integers; lets us look into file to parse media type
-//if I get an error use fileReader.result as Array Buffer instead of fileReader.result
 const array = new Uint8Array(fileReader.result as ArrayBuffer).subarray(0, 4);
         let header = "";
         let isValid = false;

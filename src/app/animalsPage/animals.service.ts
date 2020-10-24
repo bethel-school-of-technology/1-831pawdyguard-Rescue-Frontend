@@ -32,10 +32,10 @@ export class AnimalsService {
             creator: animal.creator
           };
         }),
-      maxAnimals: animalData.maxAnimals
+        maxAnimals: animalData.maxAnimals
       };
     })
-  )
+    )
     .subscribe((transformedAnimalData) => {
       this.animals = transformedAnimalData.animals;
       this. animalsUpdated.next({
