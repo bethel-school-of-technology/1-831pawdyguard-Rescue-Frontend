@@ -13,24 +13,26 @@ import { DonationsComponent } from './donate/donations/donations.component';
 
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { SignupComponent } from './auth/signup/signup.component'
+import { AuthGuard } from './auth/auth-guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'vol-main', component: VolMainComponent },
   { path: 'vol-application', component: AppFormComponent },
-  { path: 'create', component: AnimalCreateComponent },
-  { path: 'edit/:animalId', component: AnimalCreateComponent },
+  { path: 'create', component: AnimalCreateComponent, canActivate: [AuthGuard] },
+  { path: 'edit/:animalId', component: AnimalCreateComponent, canActivate: [AuthGuard] },
   { path: 'animal-list', component: AnimalListComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'donations', component: DonationsComponent },
   { path: 'donations-form', component: DonationsFormComponent },
-  { path: 'signup', component: SignupComponent }
 ];
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule {}

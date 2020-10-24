@@ -11,9 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularMaterialModule } from './material.module';
 
-import { AnimalCreateComponent } from './animalsPage/animal-create/animal-create.component';
-import { AnimalListComponent } from './animalsPage/animal-list/animal-list.component';
-
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { DonationsFormComponent } from './donate/donations-form/donations-form.component';
 
@@ -24,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent} from './auth/login/login.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AnimalsModule } from './animalsPage/animals.module';
 
 
 @NgModule({
@@ -38,8 +36,6 @@ import { SignupComponent } from './auth/signup/signup.component';
     VolMainComponent,
     LoginComponent,
     SignupComponent,
-    AnimalCreateComponent,
-    AnimalListComponent
   ],
 
   imports: [
@@ -50,6 +46,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
+    AnimalsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

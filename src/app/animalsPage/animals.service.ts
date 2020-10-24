@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 
 import { Animal } from './animal.model';
 
+const BACKEND_URL = "http://localhost:3000/animalsPage/";
+
 @Injectable({ providedIn: 'root' })
 export class AnimalsService {
   private animals: Animal[] = [];
@@ -17,7 +19,7 @@ export class AnimalsService {
     const queryParams = `?pagesize=${animalsPerPage}&page=${currentPage}`;
     this.http
     .get<{ message: string; animals: any; maxAnimals: number }>(
-      'http://localhost:3000/animalsPage' + queryParams
+      BACKEND_URL + queryParams
       )
     .pipe(map((animalData) => {
       return {
@@ -26,7 +28,8 @@ export class AnimalsService {
             title: animal.title,
             content: animal.content,
             id: animal._id,
-            imagePath: animal.imagePath
+            imagePath: animal.imagePath,
+            creator: animal.creator
           };
         }),
       maxAnimals: animalData.maxAnimals
@@ -47,7 +50,7 @@ export class AnimalsService {
   }
 
   getAnimal(id: string) {
-    return this.http.get<{_id: string; title: string; content: string; imagePath: string }>("http://localhost:3000/animalsPage/" + id);
+    return this.http.get<{_id: string; title: string; content: string; imagePath: string; creator: string; }>(BACKEND_URL + id);
   }
 
   addAnimal(title: string, content: string, image: File) {
@@ -55,7 +58,7 @@ export class AnimalsService {
     animalData.append("title", title);
     animalData.append("content", content);
     animalData.append("image", image, title);
-    this.http.post<{ message: string, animal: Animal }>('http://localhost:3000/animalsPage', animalData)
+    this.http.post<{ message: string, animal: Animal }>(BACKEND_URL, animalData)
     .subscribe(responseData => {
       this.router.navigate(['/']);  //check for correct routing '/'
     });
@@ -75,16 +78,17 @@ export class AnimalsService {
         title: title,
         content: content,
         imagePath: image,
+        creator: null,
       };
     }
     this.http
-    .put("http://localhost:3000/animalsPage/" + id, animalData)
+    .put(BACKEND_URL + id, animalData)
       .subscribe(response => {
         this.router.navigate(["/"]);
       });
   }
 
   deleteAnimal(animalId: string) {
-    return this.http.delete('http://localhost:3000/animalsPage' + animalId)
+    return this.http.delete(BACKEND_URL + animalId)
   }
 }

@@ -3,4 +3,5 @@ export interface Animal {
   title: string;
   content: string;
   imagePath: string;
+  creator: string;
 }
