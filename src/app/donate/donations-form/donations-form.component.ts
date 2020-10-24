@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './donations-form.component.html',
   styleUrls: ["./donations-form.component.css"]
 })
+
+
 export class DonationsFormComponent {
  enteredValue = '';
  newDonation = ' NO CONTENT';
@@ -15,3 +17,5 @@ export class DonationsFormComponent {
   }
 
 }
+
+

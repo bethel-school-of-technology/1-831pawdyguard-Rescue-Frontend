@@ -1,18 +1,7 @@
-body {
-  background-color: powderblue;
-}
-
-img {
- align-self:  center;
-}
-
-div {
-  height: 200px;
-  width: 50%;
-  text-align: center;
-  color: darkblue;
-}
-div {
-  color: darkblue;
-  border: 2px purple;
-}
+/* .form-container{
+  margin-top: 2rem;
+  display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+} */
