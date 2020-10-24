@@ -44,7 +44,8 @@ export class AnimalCreateComponent implements OnInit {
             id: animalData._id,
             title: animalData.title,
             content: animalData.content,
-            imagePath: animalData.imagePath
+            imagePath: animalData.imagePath,
+            creator: animalData.creator,
           };
           this.form.setValue({
             title: this.animal.title,
