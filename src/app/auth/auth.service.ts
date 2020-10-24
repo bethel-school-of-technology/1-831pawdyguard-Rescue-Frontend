@@ -1,13 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { AuthData } from "./auth-data.model";
-import { DefaultUrlSerializer } from '@angular/router';
-
 import { Subject } from 'rxjs';
+
+import { AuthData } from "./auth-data.model";
 
 @Injectable({ providedIn: "root" })
 export class AuthService  {
-
   private token: string;
 
   private isAuthenticated = false;
@@ -20,6 +18,7 @@ export class AuthService  {
 
   getToken() {
     return this.token;
+  }
 
   getIsAuth() {
     return this.isAuthenticated;
@@ -27,7 +26,6 @@ export class AuthService  {
 
   getUserId() {
     return this.userId;
-
   }
 
   getAuthStatusListener() {
@@ -42,8 +40,7 @@ export class AuthService  {
     console.log(response);
 
     });
-  }
-
+   }
 
 
 login(email: string, password: string) {
@@ -55,5 +52,4 @@ login(email: string, password: string) {
    this.authStatusListener.next(true);
     })
   }
-
 }

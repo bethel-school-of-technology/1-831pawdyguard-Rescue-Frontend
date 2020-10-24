@@ -7,24 +7,17 @@
 
       <a mat-button routerLink="/home" routerLinkActive="mat-accent" >HOME</a>
 
-
       <a mat-button routerLink="/donations" routerLinkActive="mat-accent">DONATE</a>
-
 
       <a mat-button routerLink="/vol-main" routerLinkActive="mat-accent">VOLUNTEER</a>
 
-
       <a mat-button routerLink="/animal-list" routerLinkActive="mat-accent">ANIMALS</a>
-
 
       <a *ngIf="userIsAuthenticated" mat-button routerLink="/animal-create" routerLinkActive="mat-accent">NEW ANIMAL</a>
 
-
       <a *ngIf="!userIsAuthenticated" mat-button routerLink="/login" routerLinkActive="mat-accent">LOGIN</a>
 
-
       <a *ngIf="!userIsAuthenticated" mat-button routerLink="/signup" routerLinkActive="mat-accent">SIGNUP</a>
-
 
       <button *ngIf="userIsAuthenticated" mat-button>LOGOUT</button>
 
