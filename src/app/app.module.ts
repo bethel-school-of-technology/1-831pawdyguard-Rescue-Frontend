@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+
 import { AngularMaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
@@ -20,6 +22,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent} from './auth/login/login.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthInterceptor } from './auth/auth-interceptor';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +49,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     AngularMaterialModule,
     AnimalsModule,
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent],
 })
 
