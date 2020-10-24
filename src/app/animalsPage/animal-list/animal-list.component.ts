@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 
 import { Animal } from '../animal.model';
 import { AnimalsService } from '../animals.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-animal-list',
@@ -20,20 +22,29 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   animalsPerPage = 2;
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
-
+  userIsAuthenticated = false;
+  userId: string;
   private animalsSub: Subscription;
+  private authStatusSub: Subscription;
 
-  constructor(public animalsService: AnimalsService) {}
+  constructor(public animalsService: AnimalsService, private authService: AuthService) {}
 
   ngOnInit() {
     this.animalsService.getAnimals(this.animalsPerPage, this.currentPage);
+    this.userId = this.authService.getUserId();
     this.animalsSub = this.animalsService
       .getAnimalUpdateListener()
       .subscribe((animalData: { animals: Animal[]; animalCount: number }) => {
         this.totalAnimals = animalData.animalCount;
         this.animals = animalData.animals;
       });
-
+    this.userIsAuthenticated = this.authService.getIsAuth();
+    this.authStatusSub = this.authService
+      .getAuthStatusListener()
+      .subscribe((isAuthenticated) => {
+        this.userIsAuthenticated = isAuthenticated;
+        this.userId = this.authService.getUserId();
+      });
   }
 
   onChangedPage(pageData: PageEvent) {
@@ -49,8 +60,13 @@ export class AnimalListComponent implements OnInit, OnDestroy {
       },
     );
   }
-
+// ************
+onAdoptRequest(form: NgForm){
+  console.log('Request for adoption send');
+}
+// ******
   ngOnDestroy() {
     this.animalsSub.unsubscribe();
+    this.authStatusSub.unsubscribe();
   }
 }

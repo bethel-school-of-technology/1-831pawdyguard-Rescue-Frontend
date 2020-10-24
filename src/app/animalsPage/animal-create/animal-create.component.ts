@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { AnimalsService } from '../animals.service';
 import { Animal } from '../animal.model';
 import { mediaType } from './media-type.validate';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-animal-create',
   templateUrl: './animal-create.component.html',
   styleUrls: ['./animal-create.component.css'],
 })
-export class AnimalCreateComponent implements OnInit {
+export class AnimalCreateComponent implements OnInit, OnDestroy {
   enteredTitle = '';
   enteredContent = '';
   animal: Animal;
@@ -19,10 +21,18 @@ export class AnimalCreateComponent implements OnInit {
   imagePreview: string;
   private mode = 'create';
   private animalId: string;
+  private authStatusSub: Subscription;
 
-  constructor(public animalsService: AnimalsService, public route: ActivatedRoute) {}
+  constructor(
+    public animalsService: AnimalsService,
+    public route: ActivatedRoute,
+    private authService: AuthService
+    ) {}
 
   ngOnInit() {
+    this.authStatusSub = this.authService
+    .getAuthStatusListener()
+    .subscribe((authStatus) => {});
     this.form = new FormGroup({
       title: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)],
@@ -44,7 +54,8 @@ export class AnimalCreateComponent implements OnInit {
             id: animalData._id,
             title: animalData.title,
             content: animalData.content,
-            imagePath: animalData.imagePath
+            imagePath: animalData.imagePath,
+            creator: animalData.creator,
           };
           this.form.setValue({
             title: this.animal.title,
@@ -80,5 +91,9 @@ export class AnimalCreateComponent implements OnInit {
       this.animalsService.updateAnimal(this.animalId, this.form.value.title, this.form.value.content, this.form.value.image);
     }
     this.form.reset();
+  }
+
+  ngOnDestroy() {
+    this.authStatusSub.unsubscribe();
   }
 }
