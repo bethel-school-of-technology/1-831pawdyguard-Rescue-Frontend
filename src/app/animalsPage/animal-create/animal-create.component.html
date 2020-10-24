@@ -1,16 +1,21 @@
 <h1>Animals Available for Adoption</h1>
 <mat-card>
-  <form (submit)="onSaveAnimal(animalForm)" #animalForm="ngForm">
+  <form [formGroup]="form" (submit)="onSaveAnimal()">
     <mat-form-field>
-      <input matInput type="text" name="title" [ngModel]="animal?.title" required minlength="3" placeholder="Name of Animal"
-        #title="ngModel">
-      <mat-error *ngIf="title.invalid">Please enter Animal's Name</mat-error>
+      <input matInput type="text" formControlName="title" placeholder="Animal's Name">
+      <mat-error *ngIf="form.get('title').invalid">Please Enter Animal's Name.</mat-error>
     </mat-form-field>
+    <div>
+      <button mat-stroked-button type="button" (click)="imagePicker.click()">Pick Image</button>
+      <input type="file" #imagePicker (change)="onImagePicked($event)">
+    </div>
+    <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+      <img [src]="imagePreview" [alt]="form.value.title">
+    </div>
     <mat-form-field>
-      <textarea matInput rows="4" name="content" [ngModel]="animal?.content" required placeholder="Information About this Animal"
-        #content="ngModel"></textarea>
-      <mat-error *ngIf="content.invalid">Please enter Animal's Information</mat-error>
+      <textarea matInput rows="4" formControlName="content" placeholder="Animal's Information"></textarea>
+      <mat-error *ngIf="form.get('content').invalid">Please enter the animal's information.</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="accent" type="submit">SAVE</button>
+    <button mat-raised-button color="accent" type="submit">Submit Animal </button>
   </form>
 </mat-card>
