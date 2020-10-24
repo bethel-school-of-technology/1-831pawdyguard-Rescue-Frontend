@@ -17,8 +17,8 @@ constructor(private authService: AuthService) {}
 
 ngOnInit() {
    this.authListenerSubs = this.authService
-   .getAuthStatusListener()
-   .subscribe(isAuthenticated => {
+    .getAuthStatusListener()
+    .subscribe(isAuthenticated => {
       this.userIsAuthenticated = isAuthenticated;
    });
   }
