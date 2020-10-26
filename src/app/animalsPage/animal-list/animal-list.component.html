@@ -1,5 +1,5 @@
 <!-- div main-container is needed to keep the footer at the bottom of the page-->
-<div class="main-container "> 
+<div class="main-container ">
 
 <mat-accordion multi="true" *ngIf="animals.length > 0">
   <mat-expansion-panel *ngFor="let animal of animals">
@@ -34,7 +34,7 @@
           </mat-card-title>
           <mat-form-field class="form-field">
             <mat-label>First Name</mat-label>
-            <!-- I chose minlength 2 because of chinese and corean 2 letter names-->
+            <!-- I chose minlength 2 because of chinese and Korean 2 letter names-->
             <input matInput type="text" name="fname" ngModel required minlength="2" placeholder="First Name"
               #fnInput="ngModel">
             <mat-error *ngIf="fnInput.invalid">Please enter a first name</mat-error>
@@ -64,7 +64,7 @@
             <button mat-raised-button color="accent" type="submit">Apply for Adoption</button>
           </mat-card-actions>
         </mat-card>
-   
+
   </form>
 </div>
 <!-- End Page main container-->

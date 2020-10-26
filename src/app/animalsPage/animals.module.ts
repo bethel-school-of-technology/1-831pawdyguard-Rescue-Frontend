@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AnimalCreateComponent } from './animal-create/animal-create.component';
@@ -11,6 +11,8 @@ import { AngularMaterialModule } from '../material.module';
   declarations: [AnimalCreateComponent, AnimalListComponent],
   imports: [
     CommonModule,
+    NgModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
     RouterModule,
