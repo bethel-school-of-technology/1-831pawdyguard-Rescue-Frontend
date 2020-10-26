@@ -4,9 +4,10 @@ import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
+import { environment } from '../../environments/environment';
 import { Animal } from './animal.model';
 
-const BACKEND_URL = "http://localhost:3000/animalsPage/";
+const BACKEND_URL = environment.apiUrl + '/animalsPage/';
 
 @Injectable({ providedIn: 'root' })
 export class AnimalsService {
