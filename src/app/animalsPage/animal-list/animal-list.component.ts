@@ -62,7 +62,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   }
 // ************
 onAdoptRequest(form: NgForm){
-  console.log('Request for adoption send');
+  console.log('Request for adoption sent');
 }
 // ******
   ngOnDestroy() {
