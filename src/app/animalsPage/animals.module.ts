@@ -11,13 +11,13 @@ import { AngularMaterialModule } from '../material.module';
   declarations: [AnimalCreateComponent, AnimalListComponent],
   imports: [
     CommonModule,
-    NgModule,
+    // NgModule,
     FormsModule,
     ReactiveFormsModule,
     FormsModule,
     AngularMaterialModule,
-    RouterModule,
-  ],
+    RouterModule
+  ]
 })
 export class AnimalsModule {}
 
