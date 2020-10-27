@@ -41,7 +41,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     VolMainComponent,
     LoginComponent,
     SignupComponent,
-    ErrorComponent,
+    ErrorComponent
   ],
 
   imports: [
@@ -52,14 +52,14 @@ import { SignupComponent } from './auth/signup/signup.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
-    AnimalsModule,
+    AnimalsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ErrorComponent],
+  entryComponents: [ErrorComponent]
 })
 
 export class AppModule {}
