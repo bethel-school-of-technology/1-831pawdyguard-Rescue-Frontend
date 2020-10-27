@@ -13,6 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AnimalsModule } from './animalsPage/animals.module';
 
+import { AuthInterceptor } from './auth/auth-interceptor';
+import { ErrorInterceptor } from './error-interceptor';
+import { ErrorComponent } from './error/error.component';
+
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { DonationsFormComponent } from './donate/donations-form/donations-form.component';
 import { DonationsComponent } from './donate/donations/donations.component';
@@ -22,7 +26,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent} from './auth/login/login.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { AuthInterceptor } from './auth/auth-interceptor';
+
 
 
 @NgModule({
@@ -37,6 +41,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     VolMainComponent,
     LoginComponent,
     SignupComponent,
+    ErrorComponent,
   ],
 
   imports: [
@@ -49,8 +54,12 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     AngularMaterialModule,
     AnimalsModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent],
+  entryComponents: [ErrorComponent],
 })
 
 export class AppModule {}
