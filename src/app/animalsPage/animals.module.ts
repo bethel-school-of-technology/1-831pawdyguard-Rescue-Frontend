@@ -11,6 +11,8 @@ import { AngularMaterialModule } from '../material.module';
   declarations: [AnimalCreateComponent, AnimalListComponent],
   imports: [
     CommonModule,
+    NgModule,
+    FormsModule,
     ReactiveFormsModule,
     FormsModule,
     AngularMaterialModule,
