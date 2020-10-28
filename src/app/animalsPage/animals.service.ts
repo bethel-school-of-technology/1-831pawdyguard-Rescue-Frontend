@@ -14,6 +14,7 @@ export class AnimalsService {
   private animals: Animal[] = [];
   private animalsUpdated = new Subject<{ animals: Animal[]; animalCount: number }>();
 
+  
   constructor(private http: HttpClient, private router: Router) {}
 
   getAnimals(animalsPerPage: number, currentPage: number) {

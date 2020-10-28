@@ -12,7 +12,6 @@ import { AngularMaterialModule } from '../material.module';
   imports: [
     CommonModule,
     // NgModule,
-    FormsModule,
     ReactiveFormsModule,
     FormsModule,
     AngularMaterialModule,
