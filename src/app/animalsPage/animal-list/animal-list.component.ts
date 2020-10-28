@@ -23,7 +23,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
-  userId: string;
+  // userId: string;
   private animalsSub: Subscription;
   private authStatusSub: Subscription;
 
@@ -31,7 +31,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.animalsService.getAnimals(this.animalsPerPage, this.currentPage);
-    this.userId = this.authService.getUserId();
+    // this.userId = this.authService.getUserId();
     this.animalsSub = this.animalsService
       .getAnimalUpdateListener()
       .subscribe((animalData: { animals: Animal[]; animalCount: number }) => {
@@ -43,7 +43,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
       .getAuthStatusListener()
       .subscribe((isAuthenticated) => {
         this.userIsAuthenticated = isAuthenticated;
-        this.userId = this.authService.getUserId();
+        // this.userId = this.authService.getUserId();
       });
   }
 

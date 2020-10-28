@@ -14,7 +14,7 @@ export class AnimalsService {
   private animals: Animal[] = [];
   private animalsUpdated = new Subject<{ animals: Animal[]; animalCount: number }>();
 
-  
+
   constructor(private http: HttpClient, private router: Router) {}
 
   getAnimals(animalsPerPage: number, currentPage: number) {
@@ -31,7 +31,6 @@ export class AnimalsService {
             content: animal.content,
             id: animal._id,
             imagePath: animal.imagePath,
-            creator: animal.creator
           };
         }),
         maxAnimals: animalData.maxAnimals
@@ -52,7 +51,7 @@ export class AnimalsService {
   }
 
   getAnimal(id: string) {
-    return this.http.get<{_id: string; title: string; content: string; imagePath: string; creator: string; }>(BACKEND_URL + id);
+    return this.http.get<{_id: string; title: string; content: string; imagePath: string; }>(BACKEND_URL + id);
   }
 
   addAnimal(title: string, content: string, image: File) {
@@ -80,7 +79,7 @@ export class AnimalsService {
         title: title,
         content: content,
         imagePath: image,
-        creator: null,
+
       };
     }
     this.http

@@ -15,7 +15,7 @@ export class AuthService {
   private token: string;
   private tokenTimer: any;
 
-  private userId: string;
+
   private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -28,9 +28,7 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
-  getUserId() {
-    return this.userId;
-  }
+
 
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
@@ -70,8 +68,8 @@ export class AuthService {
         }
       });
   }
-  // if the page is reloaded the user infos get lost from the auth service 
-  // it needs to be stored in local storage and 
+  // if the page is reloaded the user infos get lost from the auth service
+  // it needs to be stored in local storage and
   autoAuthUser() {
     const authInformation = this.getAuthData();
     if (!authInformation){
@@ -96,7 +94,7 @@ export class AuthService {
     this.clearAuthData();
     this.router.navigate(['/']);
   }
-  
+
 private setAuthTimer(duration: number){
   // console.log('Setting timer: ' + duration);
   this.tokenTimer = setTimeout(() => {
