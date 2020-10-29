@@ -4,10 +4,7 @@ import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { environment } from '../../environments/environment';
 import { Animal } from './animal.model';
-
-const BACKEND_URL = environment.apiUrl + '/animalsPage/';
 
 @Injectable({ providedIn: 'root' })
 export class AnimalsService {
@@ -21,7 +18,7 @@ export class AnimalsService {
     const queryParams = `?pagesize=${animalsPerPage}&page=${currentPage}`;
     this.http
     .get<{ message: string; animals: any; maxAnimals: number }>(
-      BACKEND_URL + queryParams
+      "http://localhost:3000/animalsPage" + queryParams
       )
     .pipe(map((animalData) => {
       return {
@@ -51,7 +48,7 @@ export class AnimalsService {
   }
 
   getAnimal(id: string) {
-    return this.http.get<{_id: string; title: string; content: string; imagePath: string; }>(BACKEND_URL + id);
+    return this.http.get<{_id: string; title: string; content: string; imagePath: string; }>('http://localhost:3000/animalsPage/' + id);
   }
 
   addAnimal(title: string, content: string, image: File) {
@@ -59,7 +56,7 @@ export class AnimalsService {
     animalData.append("title", title);
     animalData.append("content", content);
     animalData.append("image", image, title);
-    this.http.post<{ message: string, animal: Animal }>(BACKEND_URL, animalData)
+    this.http.post<{ message: string, animal: Animal }>('http://localhost:3000/animalsPage', animalData)
     .subscribe(responseData => {
       this.router.navigate(['/']);  //check for correct routing '/'
     });
@@ -83,13 +80,13 @@ export class AnimalsService {
       };
     }
     this.http
-    .put(BACKEND_URL + id, animalData)
+    .put('http://localhost:3000/animalsPage/' + id, animalData)
       .subscribe(response => {
         this.router.navigate(["/"]);
       });
   }
 
   deleteAnimal(animalId: string) {
-    return this.http.delete(BACKEND_URL + animalId)
+    return this.http.delete('http://localhost:3000/animalsPage/' + animalId)
   }
 }
