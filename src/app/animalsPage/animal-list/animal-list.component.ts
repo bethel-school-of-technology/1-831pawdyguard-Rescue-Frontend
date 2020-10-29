@@ -17,6 +17,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   //   { title: 'Grayson', content: '1st Cat. Gorgeous!' },
   //   { title: 'Alita', content: '2nd Cat. Hunter!' },
   // ];
+ 
   animals: Animal[] = [];
   totalAnimals = 0;
   animalsPerPage = 2;
@@ -30,6 +31,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   constructor(public animalsService: AnimalsService, private authService: AuthService) {}
 
   ngOnInit() {
+    console.log('In AnimalListComponent: ngOnInit');
     this.animalsService.getAnimals(this.animalsPerPage, this.currentPage);
     // this.userId = this.authService.getUserId();
     this.animalsSub = this.animalsService
