@@ -27,7 +27,8 @@ export class AnimalsService {
             title: animal.title,
             content: animal.content,
             id: animal._id,
-            imagePath: animal.imagePath,
+            imagePath: animal.imagePath
+            //, creator: animal.creator
           };
         }),
         maxAnimals: animalData.maxAnimals
@@ -48,7 +49,13 @@ export class AnimalsService {
   }
 
   getAnimal(id: string) {
-    return this.http.get<{_id: string; title: string; content: string; imagePath: string; }>('http://localhost:3000/animalsPage/' + id);
+    return this.http.get<{
+      _id: string; 
+      title: string; 
+      content: string; 
+      imagePath: string; 
+      // creator: string;
+    }>('http://localhost:3000/animalsPage/' + id);
   }
 
   addAnimal(title: string, content: string, image: File) {
@@ -75,8 +82,8 @@ export class AnimalsService {
         id: id,
         title: title,
         content: content,
-        imagePath: image,
-
+        imagePath: image
+        //, creator: null
       };
     }
     this.http

@@ -12,6 +12,8 @@
     </div>
     <p>{{ animal.content }}</p>
     <mat-action-row *ngIf="userIsAuthenticated">
+      <!-- Added condition for Authorization -->
+       <!-- <mat-action-row *ngIf="userIsAuthenticated" && userId === animal.creator></mat-action-row> -->
       <a mat-button color="primary" [routerLink]="['/edit', animal.id]">EDIT</a>
       <button mat-button color="warn" (click)="onDelete(animal.id)">DELETE</button>
     </mat-action-row>

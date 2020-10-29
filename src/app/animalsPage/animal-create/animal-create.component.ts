@@ -54,7 +54,8 @@ export class AnimalCreateComponent implements OnInit, OnDestroy {
             id: animalData._id,
             title: animalData.title,
             content: animalData.content,
-            imagePath: animalData.imagePath,
+            imagePath: animalData.imagePath
+            //, creator: animalData.creator
 
           };
           this.form.setValue({
