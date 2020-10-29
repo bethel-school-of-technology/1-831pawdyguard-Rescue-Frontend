@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'vol-main', component: VolMainComponent },
   { path: 'vol-application', component: AppFormComponent },
-  { path: 'create', component: AnimalCreateComponent, canActivate: [AuthGuard] },
+  { path: 'animal-create', component: AnimalCreateComponent, canActivate: [AuthGuard] },
   { path: 'edit/:animalId', component: AnimalCreateComponent, canActivate: [AuthGuard] },
   { path: 'animal-list', component: AnimalListComponent },
   { path: 'home', component: HomeComponent },

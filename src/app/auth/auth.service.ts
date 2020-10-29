@@ -110,6 +110,7 @@ private setAuthTimer(duration: number){
   }
 
   private clearAuthData() {
+    console.log('AuthService: clearAuthData called');
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
   }
