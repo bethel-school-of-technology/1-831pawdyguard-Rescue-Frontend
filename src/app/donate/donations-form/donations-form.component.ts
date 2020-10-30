@@ -30,7 +30,8 @@ export class DonationsFormComponent {
       form.value.state,
       form.value.zip, 
       form.value.email, 
-      form.value.phone
+      form.value.phone,
+      form.value.wantsLetter
       );
     form.resetForm();
   }

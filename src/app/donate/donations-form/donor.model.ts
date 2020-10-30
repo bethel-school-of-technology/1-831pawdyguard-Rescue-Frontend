@@ -9,4 +9,5 @@ export interface Donor {
   zip: string;
   email: string;
   phone: string;
+  wantsLetter:string;
 }
