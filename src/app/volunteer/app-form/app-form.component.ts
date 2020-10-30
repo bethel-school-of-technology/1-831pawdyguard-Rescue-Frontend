@@ -28,7 +28,7 @@ export class AppFormComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    console.log(form.value.ownsAnimal);
+    //console.log(form.value.ownsAnimal);
     this.volunteerService.createVolunteer(
       form.value.fname, 
       form.value.lname, 

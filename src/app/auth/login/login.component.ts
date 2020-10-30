@@ -9,6 +9,7 @@ import { AuthService } from "../auth.service";
 })
 
 export class LoginComponent implements OnInit, OnDestroy {
+  // to check on valid Login
   private authStatusSub: Subscription;
 
   constructor(public authService: AuthService) {}
