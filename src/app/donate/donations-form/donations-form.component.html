@@ -6,14 +6,14 @@
 
       <mat-form-field class="form-field">
         <mat-label>First Name</mat-label>
-        <input matInput type="text" name="firstname" ngModel required placeholder="First Name" #firstname="ngModel">
-        <mat-error *ngIf="firstname.invalid">Please enter a first name</mat-error>
+        <input matInput type="text" name="fname" ngModel required placeholder="First Name" #fname="ngModel">
+        <mat-error *ngIf="fname.invalid">Please enter a first name</mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label>Last Name</mat-label>
-        <input matInput type="text" name="lastname" ngModel required placeholder="Last Name" #lastname="ngModel">
-        <mat-error *ngIf="lastname.invalid">Please enter a last name</mat-error>
+        <input matInput type="text" name="lname" ngModel required placeholder="Last Name" #lname="ngModel">
+        <mat-error *ngIf="lname.invalid">Please enter a last name</mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-field">
@@ -55,10 +55,10 @@
 
       <div class="row">
         <div class="col">
-          <mat-radio-group name="tax">
+          <mat-radio-group name="wantsLetter" ngModel #wantsLetter="ngModel">
             <mat-label>Do you want a donation letter for taxes</mat-label>
-            <mat-radio-button value="free">Yes</mat-radio-button>
-            <mat-radio-button value="priority">No</mat-radio-button>
+            <mat-radio-button value="yes">Yes</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
         </div>
       </div>
