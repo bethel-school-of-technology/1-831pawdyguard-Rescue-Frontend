@@ -11,22 +11,22 @@ import { AuthService } from '../auth.service';
 })
 
 export class SignupComponent implements OnInit, OnDestroy {
+  //valid signup?
   private authStatusSub: Subscription;
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
     this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
-      authStatus => {}
+      authStatus => { }
     );
   }
 
   onSignup(form: NgForm) {
-  if (form.invalid) {
-    return;
-  }
-  this.authService.createUser(form.value.email, form.value.password);
-  
+    if (form.invalid) {
+      return;
+    }
+    this.authService.createUser(form.value.email, form.value.password);
   }
 
   ngOnDestroy() {

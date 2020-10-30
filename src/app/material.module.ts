@@ -61,8 +61,7 @@ MatCardModule,
 MatExpansionModule,
 MatDialogModule
 ],
-providers: [
-MatDatepickerModule,
-]
+providers: [MatDatepickerModule]
 })
+
 export class AngularMaterialModule { }

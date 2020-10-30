@@ -37,9 +37,9 @@ export class AuthService {
 
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
-    this.http.post(" http://localhost:3000/api/user/signup", authData)
+    this.http.post('http://localhost:3000/api/user/signup', authData)
       .subscribe(response => {
-        this.router.navigate(["/"]);
+        this.router.navigate(['/']);
       }, error => {
         this.authStatusListener.next(false);
       });
@@ -66,9 +66,12 @@ export class AuthService {
           //navigate to homepage after successful login
           this.router.navigate(['/']);
         }
+      }, error => {
+        this.authStatusListener.next(false);
       });
   }
-  // if the page is reloaded the user infos get lost from the auth service
+
+  // if the page is reloaded the user infos get lost from the auth service 
   // it needs to be stored in local storage (saveAuthData()) and is read out here with getAuthData
   autoAuthUser() {
     const authInformation = this.getAuthData();

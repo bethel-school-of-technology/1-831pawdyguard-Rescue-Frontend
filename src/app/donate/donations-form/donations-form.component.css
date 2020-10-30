@@ -1,0 +1,52 @@
+
+.outer-form-container{
+  background-color:white;
+  align-self: center;
+
+  max-width: 50%;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  /*margin-top: 2rem;*/
+  margin-left: 2rem;
+  margin-right:auto;
+   }
+
+ .form-container{
+   margin-top: 2rem;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ mat-form-field{
+  width:48%;
+  padding-left: 0.5rem;
+}
+
+/**** The radio buttons  ***/
+.mat-radio-button {
+  display: block;
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+
+p {
+ margin-top: 1rem;
+ padding:0.5rem;
+}
+
+.mat-radio-button:submit {
+
+color: yellow;
+}
