@@ -11,9 +11,7 @@ export class AuthService {
   private isAuthenticated = false;
   private token: string;
   private tokenTimer: any;
-  // userId for Authorization
   private userId: string;
-
   private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -45,8 +43,6 @@ export class AuthService {
       });
   }
 
-  // lots of code to add for authorization, so will come back for error handling
-
   login(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     this.http.post<{ token: string, expiresIn: number, userId: string }>(
@@ -71,7 +67,7 @@ export class AuthService {
       });
   }
 
-  // if the page is reloaded the user infos get lost from the auth service 
+  // if the page is reloaded the user infos get lost from the auth service
   // it needs to be stored in local storage (saveAuthData()) and is read out here with getAuthData
   autoAuthUser() {
     const authInformation = this.getAuthData();

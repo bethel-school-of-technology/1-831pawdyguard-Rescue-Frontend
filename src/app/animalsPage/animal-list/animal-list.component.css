@@ -23,11 +23,11 @@ mat-paginator {
   width: 4rem;
 }
 
-.post-image {
+.animal-image {
   width: 50%
 }
 
-.post-image img {
+.animal-image img {
   width: 50%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }

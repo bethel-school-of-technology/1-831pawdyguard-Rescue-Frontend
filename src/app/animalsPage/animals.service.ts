@@ -27,8 +27,8 @@ export class AnimalsService {
             title: animal.title,
             content: animal.content,
             id: animal._id,
-            imagePath: animal.imagePath
-            //, creator: animal.creator
+            imagePath: animal.imagePath,
+            creator: animal.creator
           };
         }),
         maxAnimals: animalData.maxAnimals
@@ -50,11 +50,11 @@ export class AnimalsService {
 
   getAnimal(id: string) {
     return this.http.get<{
-      _id: string; 
-      title: string; 
-      content: string; 
-      imagePath: string; 
-      // creator: string;
+      _id: string;
+      title: string;
+      content: string;
+      imagePath: string;
+      creator: string;
     }>('http://localhost:3000/animalsPage/' + id);
   }
 
@@ -65,7 +65,7 @@ export class AnimalsService {
     animalData.append("image", image, title);
     this.http.post<{ message: string, animal: Animal }>('http://localhost:3000/animalsPage', animalData)
     .subscribe(responseData => {
-      this.router.navigate(['/']);  //check for correct routing '/'
+      this.router.navigate(['animal-list']);  //check for correct routing '/'
     });
   }
 
@@ -82,14 +82,14 @@ export class AnimalsService {
         id: id,
         title: title,
         content: content,
-        imagePath: image
-        //, creator: null
+        imagePath: image,
+        creator: null
       };
     }
     this.http
     .put('http://localhost:3000/animalsPage/' + id, animalData)
       .subscribe(response => {
-        this.router.navigate(["/"]);
+        this.router.navigate(["animal-list"]);
       });
   }
 
