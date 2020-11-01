@@ -1,7 +1,7 @@
 import { AbstractControl } from '@angular/forms';
 import { Observable, Observer, of } from 'rxjs';
 
-export const mediaType = (
+export const mimeType = (
   control: AbstractControl
 ): Promise<{ [key: string]: any }> | Observable<{ [key: string]: any }> => {
   if (typeof control.value === 'string') {
@@ -10,12 +10,12 @@ export const mediaType = (
   const file = control.value as File;
   const fileReader = new FileReader();
   // const fileReaderObs = Observable.create(
-//tried to create my own observable using 'Observable.create
-// create method deprecated; using 'new' keyword
+//created my own observable using 'Observable.create; if it doesn't work:
+// create method deprecated; use 'new' keyword
   const fileReaderObs = new Observable(
     (observer: Observer<{ [key: string]: any }>) => {
       fileReader.addEventListener('loadend', () => {
-//Uint8Array creates new array of 8bit unsigned integers; lets us look into file to parse media type
+//Uint8Array creates new array of 8bit unsigned integers; lets us look into file to parse mime) type
 const array = new Uint8Array(fileReader.result as ArrayBuffer).subarray(0, 4);
         let header = "";
         let isValid = false;
@@ -40,7 +40,7 @@ const array = new Uint8Array(fileReader.result as ArrayBuffer).subarray(0, 4);
         if (isValid) {
           observer.next(null);  //null means valid
         } else {
-          observer.next({ invalidMediaType: true });
+          observer.next({ invalidMimeType: true });
         }
         observer.complete();
       });
