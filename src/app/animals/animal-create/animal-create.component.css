@@ -1,12 +1,6 @@
-.whole-form {
-  width: 60%;
-  margin: 6rem auto auto;
-  max-width: 500px;
-}
-
 mat-form-field,
 textarea {
-  width: 1000%;
+  width: 100%;
 }
 
 input[type="file"] {

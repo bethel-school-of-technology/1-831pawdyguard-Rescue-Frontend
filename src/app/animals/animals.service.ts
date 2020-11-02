@@ -63,7 +63,7 @@ export class AnimalsService {
     animalData.append("title", title);
     animalData.append("content", content);
     animalData.append("image", image, title);
-    this.http.post<{ message: string, animal: Animal }>('http://localhost:3000/animals', animalData)
+    this.http.post<{ message: string, animal: Animal }>('http://localhost:3000/api/animals', animalData)
     .subscribe(responseData => {
       this.router.navigate(['animal-list']);  //check for correct routing '/'
     });

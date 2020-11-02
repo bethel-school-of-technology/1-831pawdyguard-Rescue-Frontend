@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AnimalsModule } from './animalsPage/animals.module';
+import { AnimalsModule } from './animals/animals.module';
 
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
