@@ -24,9 +24,10 @@ import { DonationsComponent } from './donate/donations/donations.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
+
+import { SignupComponent } from './auth/signup/signup.component';
 import { AuthModule } from './auth/auth.module';
-
-
+import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { AuthModule } from './auth/auth.module';
     AngularMaterialModule,
     AnimalsModule,
     AuthModule
+
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
