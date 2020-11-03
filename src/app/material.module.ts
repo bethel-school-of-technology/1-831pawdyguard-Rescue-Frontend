@@ -18,6 +18,7 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ MatTableModule,
 MatPaginatorModule,
 MatCardModule,
 MatExpansionModule,
-MatDialogModule
+MatDialogModule,
+MatProgressSpinnerModule
 ],
 exports: [
 MatButtonModule,
@@ -59,7 +61,8 @@ MatTableModule,
 MatPaginatorModule,
 MatCardModule,
 MatExpansionModule,
-MatDialogModule
+MatDialogModule,
+MatProgressSpinner
 ],
 providers: [MatDatepickerModule]
 })

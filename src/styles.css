@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* body {
+  background: url("./assets/backgrounds/palePink.png");
+  background-size: cover;
+  background-color: thistle;
+} */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -18,15 +23,3 @@ mat-toolbar{
   font-size: 50px;
 }
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
