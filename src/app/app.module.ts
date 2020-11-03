@@ -26,6 +26,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent} from './auth/login/login.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
+
 
 
 
@@ -53,6 +55,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     HttpClientModule,
     AngularMaterialModule,
     AnimalsModule
+    
+   
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

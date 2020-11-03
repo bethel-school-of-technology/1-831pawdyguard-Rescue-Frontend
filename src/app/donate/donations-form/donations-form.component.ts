@@ -12,6 +12,7 @@ import { DonorService } from './donor.service';
 export class DonationsFormComponent {
  enteredValue = '';
  newDonation = ' NO CONTENT';
+ phoneNo: number;
 
  constructor(public donorService: DonorService){}
 
@@ -21,6 +22,7 @@ export class DonationsFormComponent {
     if (form.invalid) {
       return;
     }
+    
     this.donorService.saveDonorInfo(
       form.value.fname, 
       form.value.lname, 
@@ -34,6 +36,8 @@ export class DonationsFormComponent {
       form.value.wantsLetter
       );
     form.resetForm();
+    console.log('after form donations form reset');
+    alert('We are working on connecting the app with a Paypal Charity account')
   }
 
 
