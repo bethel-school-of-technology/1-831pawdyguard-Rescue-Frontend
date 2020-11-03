@@ -3,7 +3,7 @@ mat-card-avatar {
 }
 mat-card{
   margin-top: 2rem;
-  width:50%;
+  /*width:50%;*/
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;

@@ -1,66 +1,47 @@
-<!-- <div class="content" fxLayout="row wrap" fxLayoutGap="0.5rem" >
-  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]"> -->
-    
-<mat-card class="pitter-card mat-elevation-z4">
-  <mat-card-header>
-    
-      <img mat-card-avatar src=".\..\..\..\assets\images\pitter.jpg" alt="Pitter, the first rescued cat">
-   
-    <mat-card-title>{{donation.title}}</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-  </mat-card-header>
-  
-  <mat-card-content>
-  <section>{{donation.blog}} </section>
+<div class="content" fxLayout="row wrap" >
+  <div fxFlex="45%" fxFlex.xs="100%" fxFlex.sm="25%">
+
+    <mat-card class="pitter-card mat-elevation-z4">
+      <mat-card-header>
+
+        <img mat-card-avatar src=".\..\..\..\assets\images\pitter.jpg" alt="Pitter, the first rescued cat">
+
+        <mat-card-title>{{donation.title}}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <section>{{donation.blog}} </section>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <a routerLink="/donations-form">
+          <button mat-button>Donate here</button></a>
+      </mat-card-actions>
+    </mat-card>
 
 
-<h4>Your donation(s) go to work to provide:</h4>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Your donation(s) go to work to provide:</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
 
-<p>Food and bottles for bottle fed kittens <br>
-  Food for cats and dogs in foster care <br>
-  Medical treatment <br>
-  Including: spay and neutering<br>
-  Transportation of animals<br>
-  Equipment used to safely trap
-</p>
-
-<p>Unrestricted funds allow us to allocate our resources where the needs are greatest. 
-  You may also direct your gift to a listed category of your choice.</p>
-<p>Please contact us at:</p>
-
-  </mat-card-content>
-  <mat-card-actions>
-   <a routerLink="/donations-form">
-    <button mat-button >Donate here</button></a>
-  </mat-card-actions>
-</mat-card>
+      <mat-card-content>
+        <div *ngFor="let o of obj">
+          <p>{{o.desc}}</p>
+        </div>
 
 
-<mat-card >
-  <mat-card-header>
-  <mat-card-title>Your donation(s) go to work to provide:</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-  </mat-card-header>
-  
-  <mat-card-content>
- 
-<p>Food and bottles for bottle fed kittens <br>
-  Food for cats and dogs in foster care <br>
-  Medical treatment <br>
-  Including: spay and neutering<br>
-  Transportation of animals<br>
-  Equipment used to safely trap
-</p>
+        <p>Unrestricted funds allow us to allocate our resources where the needs are greatest.
+          You may also direct your gift to a listed category of your choice.</p>
+        <p>Please contact us at:</p>
 
-<p>Unrestricted funds allow us to allocate our resources where the needs are greatest. 
-  You may also direct your gift to a listed category of your choice.</p>
-<p>Please contact us at:</p>
+      </mat-card-content>
 
-  </mat-card-content>
-  
-</mat-card>
+    </mat-card>
 
 
-<!-- End - Flex container for page-->
-<!-- </div>
-</div> -->
+    <!-- End - Flex container for page-->
+  </div>
+</div>
