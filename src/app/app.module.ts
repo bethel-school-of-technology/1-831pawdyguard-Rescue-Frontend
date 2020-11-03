@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AnimalsModule } from './animalsPage/animals.module';
+import { AnimalsModule } from './animals/animals.module';
 
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
@@ -23,12 +23,11 @@ import { DonationsComponent } from './donate/donations/donations.component';
 
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent} from './auth/login/login.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
+
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthModule } from './auth/auth.module';
 import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
-
-
 
 
 @NgModule({
@@ -41,8 +40,6 @@ import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
     HomeComponent,
     FooterComponent,
     VolMainComponent,
-    LoginComponent,
-    SignupComponent,
     ErrorComponent
   ],
 
@@ -54,9 +51,9 @@ import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
-    AnimalsModule
-    
-   
+    AnimalsModule,
+    AuthModule
+
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

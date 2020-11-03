@@ -17,24 +17,22 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   //   { title: 'Grayson', content: '1st Cat. Gorgeous!' },
   //   { title: 'Alita', content: '2nd Cat. Hunter!' },
   // ];
- 
+
   animals: Animal[] = [];
   totalAnimals = 0;
-  animalsPerPage = 2;
+  animalsPerPage = 3;
   currentPage = 1;
-  pageSizeOptions = [1, 2, 5, 10];
+  pageSizeOptions = [1, 3, 5, 10];
   userIsAuthenticated = false;
-  // userId for Authorization: compare userIds => login with who created the animalData record
-  // userId: string;
+  userId: string;
   private animalsSub: Subscription;
   private authStatusSub: Subscription;
 
   constructor(public animalsService: AnimalsService, private authService: AuthService) {}
 
   ngOnInit() {
-    console.log('In AnimalListComponent: ngOnInit');
     this.animalsService.getAnimals(this.animalsPerPage, this.currentPage);
-    // this.userId = this.authService.getUserId();
+    this.userId = this.authService.getUserId();
     this.animalsSub = this.animalsService
       .getAnimalUpdateListener()
       .subscribe((animalData: { animals: Animal[]; animalCount: number }) => {
@@ -46,7 +44,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
       .getAuthStatusListener()
       .subscribe((isAuthenticated) => {
         this.userIsAuthenticated = isAuthenticated;
-        //this.userId = this.authService.getUserId();
+        this.userId = this.authService.getUserId();
       });
   }
 
@@ -57,8 +55,7 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   }
 
   onDelete(animalId: string) {
-    this.animalsService.deleteAnimal(animalId).subscribe(
-      () => {
+    this.animalsService.deleteAnimal(animalId).subscribe(() => {
         this.animalsService.getAnimals(this.animalsPerPage, this.currentPage);
       },
     );

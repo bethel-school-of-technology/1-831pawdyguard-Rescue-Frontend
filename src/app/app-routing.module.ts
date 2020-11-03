@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth/auth-guard';
 
-import { AnimalCreateComponent } from './animalsPage/animal-create/animal-create.component';
-import { AnimalListComponent } from './animalsPage/animal-list/animal-list.component';
+import { AnimalCreateComponent } from './animals/animal-create/animal-create.component';
+import { AnimalListComponent } from './animals/animal-list/animal-list.component';
 
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 
