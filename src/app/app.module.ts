@@ -23,12 +23,18 @@ import { DonationsComponent } from './donate/donations/donations.component';
 
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent} from './auth/login/login.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
+
 import { SignupComponent } from './auth/signup/signup.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutComponent } from './layout/layout.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+
+
+
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
+
 
 
 @NgModule({
@@ -41,11 +47,13 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     HomeComponent,
     FooterComponent,
     VolMainComponent,
+
     LoginComponent,
     SignupComponent,
     ErrorComponent,
     LayoutComponent,
     SidenavListComponent,
+    ErrorComponent
 
   ],
 
@@ -59,6 +67,10 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     AngularMaterialModule,
     AnimalsModule,
     FlexLayoutModule
+    AuthModule,
+    SharedModule
+
+
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

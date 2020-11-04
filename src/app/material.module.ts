@@ -21,6 +21,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+
 
 @NgModule({
 imports: [
@@ -45,7 +49,9 @@ MatExpansionModule,
 MatDialogModule,
 MatTabsModule,
 MatSidenavModule,
-MatMenuModule
+MatMenuModule,
+MatTooltipModule,
+MatProgressSpinnerModule
 
 ],
 exports: [
@@ -68,7 +74,9 @@ MatExpansionModule,
 MatDialogModule,
 MatTabsModule,
 MatSidenavModule,
-MatMenuModule
+MatMenuModule,
+MatTooltipModule,
+MatProgressSpinner
 
 ],
 providers: [MatDatepickerModule]

@@ -50,3 +50,12 @@ p {
 
 color: yellow;
 }
+
+.mat-icon{
+  display: inline-flex;
+  vertical-align: middle;
+font-size: medium;
+color: green;
+
+
+}
