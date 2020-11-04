@@ -41,7 +41,13 @@ export class DonationsFormComponent {
   }
 
 
+  underConstruction() {
+    alert(`  Under Construction - This function will be available soon!
 
+    We have set up a couple of mobile giving options for you 
+    like Venmo and Zelle.
+    Infos and download links are at the bottom of the page.`);
+  }
 
 
 
