@@ -8,7 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AngularMaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from '../app/navigation/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AnimalsModule } from './animals/animals.module';
@@ -26,7 +26,9 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent} from './auth/login/login.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 import { SignupComponent } from './auth/signup/signup.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutComponent } from './layout/layout.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 
 @NgModule({
@@ -41,7 +43,10 @@ import { SignupComponent } from './auth/signup/signup.component';
     VolMainComponent,
     LoginComponent,
     SignupComponent,
-    ErrorComponent
+    ErrorComponent,
+    LayoutComponent,
+    SidenavListComponent,
+
   ],
 
   imports: [
@@ -52,7 +57,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
-    AnimalsModule
+    AnimalsModule,
+    FlexLayoutModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
