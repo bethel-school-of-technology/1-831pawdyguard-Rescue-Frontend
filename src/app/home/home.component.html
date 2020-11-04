@@ -1,20 +1,57 @@
+
 <!-- div main-container is needed to keep the footer at the bottom of the page-->
-<div class="main-container "> 
+<!-- <div class="main-container "> -->
+  <!-- <div id="wrapperDiv"> -->
 
 
-<div class="img-container">
- <img class="fullBg" [src]="home.image">
-</div>
- <mat-card>
-  <mat-card-header>
-  <mat-card-title><h1>{{home.title}}</h1></mat-card-title>
-  <mat-card-subtitle>{{home.subtitle}}</mat-card-subtitle>
-  </mat-card-header>
- 
-  <mat-card-content>
-  {{home.content}}
-  </mat-card-content>
-  </mat-card>
+
+
+
+  <section fxLayout="column" fxFlexAlign="stretch">
+    <div fxFlexAlign="center">
+      <img class="catImage" [src]="home.image">
+      <p>Welcome to 831PAWDYGUARD RESCUE</p>
+    </div>
+    <p>Were Happy Your Here!</p>
+    <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
+      <mat-tab label="About">
+        <p>831 Pawdyguard Rescue is a 501cs non-profit orginaization that was started by Nia Casad in 2018. Nia has a deep passion to help every animal
+          get the care they deserve in a loving home. Nia is deeply involved with each animal and has made a lasting impact on her community.
+        </p>
+      </mat-tab>
+      <mat-tab label="Contact">
+        <h2>Contact Us: </h2>
+        <div id="div3" style="padding:20px; float:left">
+          <h2>Mailing Address</h2>
+          <address>
+            1177 Rockhaven Ct<br>
+             Salinas, CA
+            </address>
+          </div>
+        <div id="div4" style="padding:20px; float:left">
+          <h2>Phone Number</h2><br>
+          <h1>831-444-5822</h1>
+      </div>
+
+        </mat-tab>
+      <mat-tab label="Local Resources">
+         <h2>SPAY and Neuter Services</h2><br>
+         <a href="https://www.snipbus.org/">SNIP</a>
+         <p>Serves Montery County<br>
+          925-967-1001
+        </p>
+        </mat-tab>
+        <mat-tab label="Why We Rescue">
+          <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
+         </mat-tab>
+         <mat-tab label="Fees">
+          <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
+         </mat-tab>
+    </mat-tab-group>
+  </section>
+
+
+
 
 
 
