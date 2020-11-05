@@ -1,77 +1,93 @@
-<div class="content" fxLayout="row wrap"  >
-   <div class="container-outer"  > 
-    <div class="spacer" fxFlex="10%" fxHide.xs="true" fxHide.sm="true" ></div>
+<div class="content">
+  <div class="container-outer" fxLayout="row wrap">
+    <div class="spacer" fxFlex="10%" fxHide.xs="true" fxHide.sm="true"></div>
 
-    <mat-card class="pitter-card mat-elevation-z1" fxFlex="65%" fxFlex.sm="100%" fxFlex.xs="100%">
+    <mat-card class="pitter-card mat-elevation-z1" fxFlex="60%" fxFlex.sm="100%" fxFlex.xs="100%">
       <mat-card-header>
-        <img id="iheader" mat-card-avatar src=".\..\..\..\assets\images\pitter.jpg" alt="Pitter, a rescued cat">
+        <img id="iheader" mat-card-avatar src="./../../../assets/images/pitter.jpg" alt="Pitter, a rescued cat">
         <mat-card-title>Hi, my name is Pitter!</mat-card-title>
         <mat-card-subtitle>My first blog...</mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
-        <section>I was asked to share a bit of my story. To be honest, 
+        <section>I was asked to share a bit of my story. To be honest,
           it is the first time somebody asked me to write about my life.
-          I feel honored and I'm so excited! <br><br>Let's start with the simple stuff to warm up. 
-          I live in Salinas, CA with my lovely homy Nia Casad. And it's not too far fetched to say, I own her my life. <br>
-          Nia's mum was rescuing pets back in the day, so she grew up with a big heart for animals and a good example and followed in the footsteps of her mum.
-          With 10 Nia started volunteering at a vet, learning animal care from scratch, was hired with 16 and stepped out to do her own rescue with 19. 
-          <br><br>We met through a TNR program. I was trapped as a little kitten. My lucky day, I tell you. I would have died without it. Nia was called and she took me in.
-          For the next three weeks she kept me at her side, fed me, bought medication, made sure I would survive. And I did. 
-          And because I'm so incredible cute and charming, she decided that I could live with her. What shall I say, she couldn't but love me!
+          I feel honored and I'm so excited! <br><br>Let's start with the simple stuff to warm up.
+          I live in Salinas, CA with my lovely homy Nia Casad. And it's not too far fetched to say, I owe her my life.
+          <br>
+          Nia's mum was rescuing pets back in the day, so she grew up with a big heart for animals and a good example
+          and followed in the footsteps of her mum.
+          With 10 Nia started volunteering at a vet, learning animal care from scratch, was hired with 16 and stepped
+          out to do her own rescue with 19.
+          <br><br>We met through a TNR program. I was trapped as a little kitten. My lucky day, I tell you. I would have
+          died without it. Nia was called and she took me in.
+          For the next three weeks she kept me at her side, fed me, bought medication, made sure I would survive. And I
+          did.
+          And because I'm so incredible cute and charming, she decided that I could live with her. What shall I say, she
+          couldn't but love me!
           And I know, I'm just a cat, but her animal rescue made a huge difference, for me and hundreds of others.
           <br><br>
-          And what I see is, it makes even a difference for the people who donate and volunteer. It brings the best out of them.
-          Thank you for your support- the time and the money you invest!
-          Yours sincerly, Pitter` </section>
-      </mat-card-content>
-    </mat-card>
-
-
-    <mat-card fxFlex="25%" fxFlex.sm="100%"fxFlex.xs="100%" >
-      <mat-card-header>
-        <mat-card-title>We don't sell animals!</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-       
-        <p>Often we get asked, whether we sell animals and the answer is No!
-          But we kindly ask for a donation, if you want to adopt an animal.
-          This type of donations barley cover our cost for vaccination, medical check-up and so on, but it helps us to get around.
-        </p>
-
+          And what I see - it even makes a difference for the people who donate and volunteer. It brings the best out
+          of them.
+          Thank you for your support- the time and the money you invest!<br><br>
+          Yours sincerly, Pitter </section>
       </mat-card-content>
       <mat-card-actions>
         <a routerLink="/donations-form">
-          <button mat-button>Donate here</button></a>
+          <button mat-button>Donate</button></a> <a routerLink="/vol-application">
+          <button mat-button>Volunteer</button></a>
       </mat-card-actions>
+
+    </mat-card>
+
+
+    <mat-card fxFlex="25%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <mat-card-header>
+        <mat-card-title class="side-title">We don't sell animals!</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <br>
+        <p>Often we get asked, whether we sell animals and the answer is No!
+          But if you want to adopt an animal, we kindly ask for a donation.
+          This type of donations barley cover our cost for vaccination, medical check-up and so on, but it helps us to
+          get around.
+        </p>
+        <img class="side-img" src="./../../../assets/images/dog-in new-home.png" alt="Adopted dog">
+      </mat-card-content>
+
     </mat-card>
   </div>
- </div> 
-  <!-- End - Flex container for top of page   fxFlex.xs="100%" fxFlex.sm="33%" -->
+</div>
+<!-- End - Flex container for top of page   fxFlex.xs="100%" fxFlex.sm="33%" -->
 
-  <div class="container-outer"  >
-    
-    <div class="spacer" fxFlex="10%" fxHide.xs="true" fxHide.sm="true" ></div>
-<div class="content" fxLayout="row wrap" >
-  <div class="d-p-title">
-  <h4>Unrestricted funds allow us to allocate our resources where the needs are greatest.
-    But you may also direct your gift to a listed category of your choice.</h4>
-<h2>Your donation(s) go to work to provide:</h2></div>
-  
-  <div class="donation-purpose"  fxFlex="25"  *ngFor="let c of category">
-    <mat-card class="mat-elevation-z4" >
-      <mat-card-header>
-        <mat-card-title class="d-p-desc">{{c.desc}}</mat-card-title>
-      </mat-card-header>
+<div class="container-outer" fxLayout="row">
 
-      <mat-card-content>
-    <p>?color -image?</p>
-      </mat-card-content>
-      <!-- maybe have the cards flip with some more infos on the back?
+  <div class="spacer" fxFlex="10%" fxHide.xs="true" fxHide.sm="true"></div>
+  <div class="content">
+    <div class="d-p-title">
+      <h4>Unrestricted funds allow us to allocate our resources where the needs are greatest.
+        But you may also direct your gift to a listed category of your choice.</h4>
+      <h2>Your donation(s) go to work to provide:</h2>
+    </div>
+
+    <div class="little-cards-frame" fxLayout="row wrap">
+      <div class="donation-purpose" fxFlex="25" fxFlex.sm="33%" fxFlex.xs="100%" *ngFor="let c of category">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title class="d-p-desc">{{c.desc}}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>?color -image?</p>
+          </mat-card-content>
+          <!-- maybe have the cards flip with some more infos on the back?
         <mat-card-actions>
       <button mat-button>Learn more</button>
       </mat-card-actions> -->
-    </mat-card>
-  </div> 
+        </mat-card>
+      </div> 
+
+    </div>
+
+  </div>
 </div>
-</div> 
