@@ -1,26 +1,20 @@
-/* borders and background-color for layout phase only*/
-
 .container-outer {
-  /* background-color: rgb(171, 166, 175); */
   max-width: 1000px;
+  margin-top: 1rem;
 }
 
 mat-card{
-  /* border: solid 1px magenta; */
   max-width: 500px;
-  margin-right: 0.5rem;
-  margin-left: 1rem;
+  margin: 0.5rem;
 }
+
 mat-card:hover{
   box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
   transform: translate3d(0,0,0);
   transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
 }
-
 .content {
- padding-top: 1.5rem;
  padding-bottom: 1.5rem;
-  /* border: dotted 2px red;  */
 }
 
 #iheader {
@@ -28,12 +22,18 @@ width: 10%;
 height:10%;
 align-self: left;
 }
-
-
+.side-title {
+  font-size: 1rem;
+  color: rgb(77, 0, 128);
+}
+.side-img{
+  width:100%;
+  height:auto;
+}
 /* little cards */
 .donation-purpose {
-  margin-top: 0.5rem;
-}
+  max-width: 200px;
+} 
 .d-p-title {
   margin-left: 1rem;
 }
@@ -41,6 +41,6 @@ align-self: left;
   font-size: medium;
 }
 
-/* div  {
- border: solid 1px rgb(41, 2, 59);
-} */
+a {
+  color: rgb(77, 0, 128);
+}
