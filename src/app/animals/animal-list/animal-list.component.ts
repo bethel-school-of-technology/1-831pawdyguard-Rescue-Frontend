@@ -7,6 +7,7 @@ import { Animal } from '../animal.model';
 import { AnimalsService } from '../animals.service';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-animal-list',
   templateUrl: './animal-list.component.html',

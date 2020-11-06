@@ -1,13 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-/* body {
-  background: url("./assets/backgrounds/palePink.png");
-  background-size: cover;
-  background-color: thistle;
-} */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 
 mat-toolbar{
   justify-content:space-between;
@@ -20,7 +12,6 @@ mat-toolbar{
   font-size: 50px;
 }
 
-
 .mat-tab-label {
   color: black;
   font-size: 2em;
@@ -29,11 +20,9 @@ mat-toolbar{
   color: purple;
 }
 
-
 /* for sidenav to take a whole page */
 
 /* html, body {
   margin: 0;
   height: 100%;
 } */
-
