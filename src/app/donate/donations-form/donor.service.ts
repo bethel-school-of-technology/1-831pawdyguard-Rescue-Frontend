@@ -12,9 +12,9 @@ export class DonorService {
 
  
   saveDonorInfo(fname: string, lname: string, street: string, street2: string, city: string, 
-    state: string,zip: string, email: string, phone: string, wantsLetter: string) {
+    state: string,zip: string, email: string, phone: string, wantsLetter: string, timestamp: Date) {
     const donorData: Donor = {id: null, fname: fname, lname: lname, street: street, street2: street2, city: city,
-    state: state, zip: zip, email: email, phone: phone, wantsLetter: wantsLetter };
+    state: state, zip: zip, email: email, phone: phone, wantsLetter: wantsLetter, timestamp:timestamp};
 
     this.http.post<{ message: string }>('http://localhost:3000/api/newDonor', donorData)
       .subscribe((resData) => {

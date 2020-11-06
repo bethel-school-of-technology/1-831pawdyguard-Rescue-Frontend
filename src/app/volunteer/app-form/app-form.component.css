@@ -25,7 +25,6 @@
  }
 
  mat-form-field{
-  width:48%;
   padding-left: 0.5rem;
 }
 
@@ -36,8 +35,7 @@
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
+  width:100%;
 }
 
 .col {
@@ -46,7 +44,8 @@
 }
 
 
-p {
- margin-top: 1rem;
- padding:0.5rem;
+.title-tag {
+width:100%;
+margin-top: 1rem;
+padding:0.5rem;
 }
