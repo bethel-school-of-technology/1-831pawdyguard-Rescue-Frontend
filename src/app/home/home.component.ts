@@ -6,13 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   home = {
-    title: '831pawdyguard rescue',
+
     subtitle: 'Established in 2018',
     content: '',
     image: 'assets/images/pitter.jpg'
-
 };
+
+public executeSelectedChange = (event) => {
+  console.log(event);
+}
 
   constructor() { }
 

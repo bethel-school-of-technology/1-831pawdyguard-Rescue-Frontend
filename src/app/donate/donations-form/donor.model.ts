@@ -10,4 +10,5 @@ export interface Donor {
   email: string;
   phone: string;
   wantsLetter:string;
+  timestamp:Date;
 }
