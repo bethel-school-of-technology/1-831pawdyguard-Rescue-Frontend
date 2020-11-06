@@ -3,27 +3,10 @@
   align-self: center;
   max-width: 50%;
   padding-top: 2rem;
-  padding-left: 1rem;
   margin-left: 2rem;
   margin-right:auto;
-   }
-
- .form-container{
-   margin-top: 2rem;
-   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- }
-
- mat-form-field{
-  width:48%;
-  padding-left: 0.5rem;
 }
-mat-action-row{
-  display: flex;
-  justify-self: flex-start;
-}
+
 .paypal{
   background-color: gold;
   color: blue;
@@ -59,15 +42,33 @@ p {
   display: inline-flex;
   vertical-align: middle;
   font-size: medium;
-  color: green;
+  color: rgb(55, 0, 128);
 }
 
 .online-giving {
   margin-left: 2rem;
-  max-width: 50%;
+  max-width: 55%;
   /* border: solid 1px blue; */
   margin-top: 3rem;
 }
 .eph1 {
   font-size: 0.8rem;
+}
+
+.mobile-title{
+  color: rgb(55, 0, 128);
+}
+
+.mat-action-row {
+  width:100%;
+  max-width: 600px;
+  place-content: space-between;
+}
+button{
+  margin-bottom: 1rem;
+}
+
+.visible {
+  width: 100%;
+  /*border: solid 1px red;*/
 }
