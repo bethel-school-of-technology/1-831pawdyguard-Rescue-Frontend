@@ -14,9 +14,9 @@ export class VolunteerService {
 
   // stretch goal: add checkboxes for volunteer jobs
   createVolunteer(fname: string, lname: string, street: string, street2: string, city: string, 
-    state: string,zip: string, email: string, phone: string, details: string, ownsAnimal: string, skills: string) {
+    state: string,zip: string, email: string, phone: string, details: string, ownsAnimal: string, skills: string, volchoice: string, timestamp: Date) {
     const volData: Volunteer = {id: null, fname: fname, lname: lname, street: street, street2: street2, city: city,
-    state: state, zip: zip, email: email, phone: phone, details: details,ownsAnimal: ownsAnimal, skills: skills };
+    state: state, zip: zip, email: email, phone: phone, details: details,ownsAnimal: ownsAnimal, skills: skills, volchoice: volchoice, timestamp: timestamp };
 
     this.http.post<{ message: string }>('http://localhost:3000/api/newVol', volData)
       .subscribe((resData) => {
