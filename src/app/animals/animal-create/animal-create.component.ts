@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 
 import { AnimalsService } from '../animals.service';
 import { Animal } from '../animal.model';
-import { mimeType } from './mime-type.validate';
+// import { mimeType } from './mime-type.validate';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -42,7 +42,7 @@ export class AnimalCreateComponent implements OnInit, OnDestroy {
       }),
       image: new FormControl(null, {
         validators: [Validators.required],
-        asyncValidators: [mimeType],
+        // asyncValidators: [mimeType],
       }),
     });
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -54,7 +54,7 @@ export class AnimalCreateComponent implements OnInit, OnDestroy {
             id: animalData._id,
             title: animalData.title,
             content: animalData.content,
-            imagePath: animalData.imagePath,
+            imagePath: null,
             creator: animalData.creator
 
           };
@@ -75,8 +75,6 @@ export class AnimalCreateComponent implements OnInit, OnDestroy {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({ image: file });
     this.form.get('image').updateValueAndValidity();
-    console.log(file);
-    console.log(this.form);
     const reader = new FileReader();
     reader.onload = () => {
       this.imagePreview = reader.result as string;
