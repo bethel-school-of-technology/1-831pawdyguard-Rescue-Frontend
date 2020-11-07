@@ -6,13 +6,13 @@
 
     <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
       <mat-label>First Name</mat-label>
-      <input matInput type="text" name="fname" ngModel required placeholder="First Name" #fname="ngModel">
+      <input matInput type="text" name="fname" ngModel minlength="2"required placeholder="First Name" #fname="ngModel">
       <mat-error *ngIf="fname.invalid">Please enter a first name</mat-error>
     </mat-form-field>
 
     <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
       <mat-label>Last Name</mat-label>
-      <input matInput type="text" name="lname" ngModel required placeholder="Last Name" #lname="ngModel">
+      <input matInput type="text" name="lname" ngModel minlength="2" required placeholder="Last Name" #lname="ngModel">
       <mat-error *ngIf="lname.invalid">Please enter a last name</mat-error>
     </mat-form-field>
     <!--  ? work over Format  street2 is not displaying right -->

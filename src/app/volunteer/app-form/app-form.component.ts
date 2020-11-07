@@ -12,10 +12,12 @@ import { VolunteerService } from './volunteer.service';
 })
 export class AppFormComponent implements OnInit {
   hasAnimal: any = '';
- 
+  timestamp = new Date();
+  model: any = {};
 
-// inserted the service as a dependency injection 
-  constructor(public volunteerService: VolunteerService) { }
+
+ constructor(public volunteerService: VolunteerService) { }
+
 
   ngOnInit(): void {
   }
@@ -29,6 +31,8 @@ export class AppFormComponent implements OnInit {
       return;
     }
     //console.log(form.value.ownsAnimal);
+    const volchoice = JSON.stringify(this.model, null);
+  
     this.volunteerService.createVolunteer(
       form.value.fname, 
       form.value.lname, 
@@ -41,9 +45,12 @@ export class AppFormComponent implements OnInit {
       form.value.phone,
       form.value.details, 
       form.value.ownsAnimal,
-      form.value.skills
+      form.value.skills,
+      volchoice,
+      this.timestamp
       );
     form.resetForm();
   }
+
 
 }

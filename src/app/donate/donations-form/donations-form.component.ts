@@ -1,7 +1,7 @@
 import { NgForm } from '@angular/forms';
 import { Component } from '@angular/core';
 import { DonorService } from './donor.service';
-import { _MatTabBodyBase } from '@angular/material/tabs';
+//import { _MatTabBodyBase } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-donations-form',
@@ -12,8 +12,6 @@ import { _MatTabBodyBase } from '@angular/material/tabs';
 
 export class DonationsFormComponent {
  enteredValue = '';
- newDonation = ' NO CONTENT';
- phoneNo: number;
  timestamp = new Date();
  hasStreetAdd = false;
 
@@ -25,8 +23,6 @@ export class DonationsFormComponent {
     if (form.invalid) {
       return;
     }
-   
-    console.log('Now: ' + this.timestamp);
     this.donorService.saveDonorInfo(
       form.value.fname, 
       form.value.lname, 
@@ -41,12 +37,9 @@ export class DonationsFormComponent {
       this.timestamp
       );
     form.resetForm();
-    console.log('after form donations form reset');
-    alert('We are working on connecting the app with a Paypal Charity account')
   }
 
   clearForm(donorForm:NgForm){
-    console.log('clear form');
     donorForm.resetForm();
   }
 
