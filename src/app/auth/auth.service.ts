@@ -33,6 +33,8 @@ export class AuthService {
   }
 /* is our user authenticated?*/
 
+
+
 /*called by signup*/
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };

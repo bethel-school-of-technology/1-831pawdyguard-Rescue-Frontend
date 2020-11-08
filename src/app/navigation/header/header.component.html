@@ -5,7 +5,7 @@
       </button>
   </div>
   <div>
-      <a routerLink="/">831PAWDYGUARD RESCUE</a>
+      <a class=rescue_nav routerLink="/">831PAWDYGUARD RESCUE</a>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
       <ul fxLayout fxLayoutGap="15px" class="navigation-items">
@@ -19,7 +19,7 @@
             <a mat-button routerLink="/vol-main" routerLinkActive="mat-accent">VOLUNTEER</a>
           </li>
           <li>
-            <a mat-button routerLink="/animal-list" routerLinkActive="mat-accent">ANIMALS</a>
+            <a mat-button routerLink="/animal-list" routerLinkActive="mat-accent">ADOPT</a>
           </li>
           <li>
             <a *ngIf="userIsAuthenticated" mat-button routerLink="/animal-create" routerLinkActive="mat-accent">NEW ANIMAL</a>

@@ -3,52 +3,84 @@
 <!-- <div class="main-container "> -->
   <!-- <div id="wrapperDiv"> -->
 
+<mat-carousel timings="250ms ease-in"
+    [autoplay]="true"interval="5000"
+    color="black"
+    maxWidth="auto"proportion="25"
+    slides="5"
+    [loop]="true"
+    [hideArrows]="false"
+    [hideIndicators]="true"
+    [useKeyboard]="true"
+    [useMouseWheel]="true"
+    orientation="ltr">
 
+<mat-carousel-slide
+    #matCarouselSlide
+    *ngFor="let slide of slides; let i = index"
+    [image]="slide.image"
+    overlayColor="gray"
+    [hideOverlay]="true">
 
+<!-- div for text on image on mat-carousel-slide -->
+   <!-- <div
+  style="width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+     justify-content: center"> -->
 
+  <h1 style="color: white; padding: 10px;">Adopted!</h1>
+<!-- </div> -->
 
+  </mat-carousel-slide>
+</mat-carousel>
   <section fxLayout="column" fxFlexAlign="stretch">
-    <div fxFlexAlign="center">
-      <img class="catImage" [src]="home.image">
-      <p>Welcome to 831PAWDYGUARD RESCUE</p>
+    <div fxFlexAlign="center" >
+      <p> Together We Can Make A Difference</p>
     </div>
-    <p>Were Happy Your Here!</p>
+  </section>
     <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
       <mat-tab label="About">
-        <p>831 Pawdyguard Rescue is a 501cs non-profit orginaization that was started by Nia Casad in 2018. Nia has a deep passion to help every animal
-          get the care they deserve in a loving home. Nia is deeply involved with each animal and has made a lasting impact on her community.
+        <p>831 Pawdyguard Rescue is a 501cs non-profit orginaization that was started by Nia Casad in 2018. <br>
+          Nia has a deep passion to help every animal get the care they deserve in a loving home. Nia is deeply<br>
+          involved with each animal and has made a lasting impact on her community.
         </p>
       </mat-tab>
       <mat-tab label="Contact">
-        <h2>Contact Us: </h2>
-        <div id="div3" style="padding:20px; float:left">
+        <h1>Contact Us:</h1>
+        <div class="div0">
+        <div id="div3" style="padding:20px">
           <h2>Mailing Address</h2>
           <address>
             1177 Rockhaven Ct<br>
              Salinas, CA
             </address>
           </div>
-        <div id="div4" style="padding:20px; float:left">
+        <div id="div4" style="padding:20px">
           <h2>Phone Number</h2><br>
           <h1>831-444-5822</h1>
+        </div>
       </div>
-
-        </mat-tab>
+      </mat-tab>
       <mat-tab label="Local Resources">
          <h2>SPAY and Neuter Services</h2><br>
-         <a href="https://www.snipbus.org/">SNIP</a>
-         <p>Serves Montery County<br>
+         <a  href="https://www.snipbus.org/">SNIP</a>
+         <p class="snip">Serves Montery County<br>
           925-967-1001
         </p>
-        </mat-tab>
-        <mat-tab label="Why We Rescue">
-          <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-         </mat-tab>
-         <mat-tab label="Fees">
-          <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
-         </mat-tab>
+      </mat-tab>
+      <mat-tab label="Why We Rescue">
+          <p> </p>
+      </mat-tab>
+      <mat-tab label="Fees">
+        <p> </p>
+          <h2>DOG</h2>
+          <p>$250</p>
+      </mat-tab>
     </mat-tab-group>
-  </section>
+
 
 
 
