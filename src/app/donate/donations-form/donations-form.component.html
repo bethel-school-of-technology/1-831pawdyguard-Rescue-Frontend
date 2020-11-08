@@ -1,107 +1,139 @@
 <div class="outer-form-container">
 
-  <h1>Donation Page</h1>
-  <div class="form-container">
-    <form class="input-form" (submit)="onAddDonor(donorForm)" #donorForm="ngForm">
+  <h1>Donations Page</h1>
 
-      <mat-form-field class="form-field">
-        <mat-label>First Name</mat-label>
-        <input matInput type="text" name="fname" ngModel required placeholder="First Name" #fname="ngModel">
-        <mat-error *ngIf="fname.invalid">Please enter a first name</mat-error>
-      </mat-form-field>
+  <form class="input-form" (submit)="onAddDonor(donorForm)" #donorForm="ngForm" fxLayout="row wrap">
 
-      <mat-form-field class="form-field">
-        <mat-label>Last Name</mat-label>
-        <input matInput type="text" name="lname" ngModel required placeholder="Last Name" #lname="ngModel">
-        <mat-error *ngIf="lname.invalid">Please enter a last name</mat-error>
-      </mat-form-field>
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" name="fname" ngModel minlength="2"required placeholder="First Name" #fname="ngModel">
+      <mat-error *ngIf="fname.invalid">Please enter a first name</mat-error>
+    </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Street</mat-label>
-        <input matInput type="text" name="street" ngModel required placeholder="Street" #street="ngModel">
-        <mat-error *ngIf="street.invalid">Please enter a street</mat-error>
-      </mat-form-field>
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" name="lname" ngModel minlength="2" required placeholder="Last Name" #lname="ngModel">
+      <mat-error *ngIf="lname.invalid">Please enter a last name</mat-error>
+    </mat-form-field>
+    <!--  ? work over Format  street2 is not displaying right -->
 
-      <mat-form-field class="form-field">
-        <mat-label>Street</mat-label>
-        <input matInput type="text" name="street2" ngModel placeholder="Addition to Address" #street2="ngModel">
-        <mat-error *ngIf="street2.invalid">Please enter a street</mat-error>
-      </mat-form-field>
+    <div class="visible"> 
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>Street</mat-label>
+      <input matInput type="text" name="street" ngModel required placeholder="Street Name" #street="ngModel">
+      <mat-error *ngIf="street.invalid">Please enter a street</mat-error>
+    </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>City</mat-label>
-        <input matInput type="text" name="city" ngModel required placeholder="City" #city="ngModel">
-        <mat-error *ngIf="city.invalid">Please enter a city</mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>State</mat-label>
-        <input matInput type="text" name="state" ngModel required placeholder="State" #state="ngModel">
-        <mat-error *ngIf="state.invalid">Please enter a state</mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>Zip Code</mat-label>
-        <input matInput type="text" name="zip" ngModel required placeholder="Zip Code" #zip="ngModel">
-        <mat-error *ngIf="zip.invalid">Please enter a zip code</mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>Email</mat-label>
-        <input matInput type="text" name="email" ngModel required placeholder="E-Mail" #email="ngModel">
-        <mat-error *ngIf="email.invalid">Please enter an email</mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>
-          <mat-icon>phone</mat-icon>Phone Number
-        </mat-label>
-        <input matInput type="text" name="phone" ngModel required placeholder="Phone Number incl. Area Code"
-          #phoneInput="ngModel">
-        <mat-error *ngIf="phoneInput.invalid">Please enter phone number and area code</mat-error>
-      </mat-form-field>
-      <div class="row">
-        <div class="col">
-
-          <mat-radio-group name="wantsLetter" ngModel #wantsLetter="ngModel">
-            <div>
-              <mat-label>Do you want a donor acknowledgment letter? <span
-                  matTooltip="Donors giving more than $250 in a single contribution to a tax-exempt nonprofit organization need a written acknowledgment from the organization to claim that deduction on their individual income tax return.">
-                  <mat-icon>info_outline</mat-icon>
-                </span> </mat-label>
-            </div>
-            <mat-radio-button value="yes">Yes</mat-radio-button>
-            <mat-radio-button value="no">No</mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </div>
-      <mat-action-row>
-        <button mat-raised-button color="accent" type="submit">Donate with Paypal ( So far a Placeholder)</button>
-      </mat-action-row>
-    </form>
-
-    <h3>Other ways to give per Mobile Phone or Pad...</h3>
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          Venmo 
-        </mat-expansion-panel-header>
-        <p><a href="https://venmo.com/signup" target="_blank">Get Venmo</a></p>
-        <p>SignUp and donate to:   Nia-Casad</p>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          Zelle
-        </mat-expansion-panel-header>
-        <p><a href="https://www.zellepay.com/go/zelle" target="_blank">Download Zelle</a></p>
-        <p>8314445822</p>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          Paypal
-        </mat-expansion-panel-header>
-        <p>niacasad1995@gmail.com</p>
-      </mat-expansion-panel>
-    </mat-accordion>
+    <div class="show" *ngIf="!hasStreetAdd">
+      <button mat-button type="button" (click)="hasStreetAdd = !hasStreetAdd">
+        + Add C/O, Apt, Suite, Unit
+      </button>
+    </div>
+    <div class="show" *ngIf="hasStreetAdd">
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>Additon to Address</mat-label>
+      <input matInput type="text" name="street2" ngModel placeholder="Add C/O, Apt, Suite, Unit" #street2="ngModel">
+      <mat-error *ngIf="street2.invalid">Please enter a street</mat-error>
+    </mat-form-field>
+    </div>
+  
   </div>
+
+    <!-- -->
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>City</mat-label>
+      <input matInput type="text" name="city" ngModel required placeholder="City" #city="ngModel">
+      <mat-error *ngIf="city.invalid">Please enter a city</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>State</mat-label>
+      <input matInput type="text" name="state" ngModel required placeholder="State" #state="ngModel">
+      <mat-error *ngIf="state.invalid">Please enter a state</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>Zip Code</mat-label>
+      <input matInput type="text" name="zip" maxlength="5" ngModel required placeholder="Zip Code" #zip="ngModel">
+      <mat-error *ngIf="zip.invalid">Please enter a zip code</mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" name="email" ngModel required placeholder="E-Mail" #email="ngModel">
+      <mat-error *ngIf="email.invalid">Please enter an email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>
+        <mat-icon>phone</mat-icon>Phone Number
+      </mat-label>
+      <input matInput type="text" name="phone" ngModel required placeholder="Phone Number incl. Area Code"
+        #phoneInput="ngModel">
+      <mat-error *ngIf="phoneInput.invalid">Please enter phone number and area code</mat-error>
+    </mat-form-field>
+
+    <div class="row">
+      <div class="col">
+        <mat-radio-group name="wantsLetter" ngModel #wantsLetter="ngModel">
+          <div>
+            <mat-label>Do you want a donor acknowledgment letter? <span
+                matTooltip="Donors giving more than $250 in a single contribution to a tax-exempt nonprofit organization need a written acknowledgment from the organization to claim that deduction on their individual income tax return.">
+                <mat-icon>info_outline</mat-icon>
+              </span> </mat-label>
+          </div>
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <!-- For later when the paypal charity account is setup-->
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>Designated Use</mat-label>
+      <input matInput type="text" name="usefor" ngModel placeholder="Designated Purpose " #usefor="ngModel">
+      <mat-error *ngIf="usefor.invalid">Please enter designated purpose</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
+      <mat-label>Donated Amount</mat-label>
+      <input matInput type="text" name="amount" ngModel placeholder="Donated amount" #amount="ngModel">
+      <mat-error *ngIf="amount.invalid">Please enter the amount you donated for the acknowledgment letter</mat-error>
+    </mat-form-field>
+
+
+    <!-- -->
+    <mat-action-row class="button-row" fxLayout="row wrap">
+      <button class="btn-row" mat-raised-button color="primary" type="submit" [disabled]="!donorForm.form.valid"
+        fxFlex.sm="70%" fxFlex.xs="100%">Submit</button>
+      <button class="btn-row" mat-raised-button color="basic" type="button" (click)="donorForm.resetForm()"
+        fxFlex.sm="70%" fxFlex.xs="100%">Cancel</button>
+      <button class="paypal" mat-raised-button (click)="underConstruction()" fxFlex.sm="70%" fxFlex.xs="100%">Donate
+        with Paypal</button>
+
+    </mat-action-row>
+  </form>
+</div>
+
+
+<div class="online-giving">
+
+  <h4 class="mobile-title">Other ways to give to our charity per Mobile Phone or Pad...</h4>
+  <mat-accordion multi="true">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="eph1">
+        Venmo
+      </mat-expansion-panel-header>
+      <div> <a href="https://venmo.com/signup" target="_blank">Get Venmo, </a>
+        SignUp and donate to: Nia-Casad</div>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="eph1">
+        Zelle
+      </mat-expansion-panel-header>
+      <div> <a href="https://www.zellepay.com/go/zelle" target="_blank">Download Zelle</a>
+        Or donate right away to: 8314445822</div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
 </div>

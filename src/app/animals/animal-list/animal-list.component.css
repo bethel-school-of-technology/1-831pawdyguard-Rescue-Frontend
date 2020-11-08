@@ -54,15 +54,15 @@ margin: auto;
   /*margin-top: 2rem;*/
   margin-left: 2rem;
   margin-right:auto;
-   }
+}
 
- .f-col{
-   margin-top: 2rem;
-   display: flex;
+.f-col{
+  margin-top: 2rem;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- }
+}
 
  /* Container to keep footer in check*/
  .main-container {
@@ -71,4 +71,4 @@ margin: auto;
   display: block;
   position: relative;
   padding-bottom: 2rem; /* height of your footer */
- }
+}

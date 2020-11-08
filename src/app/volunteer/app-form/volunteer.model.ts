@@ -12,5 +12,7 @@ export interface Volunteer {
   details:string;
   ownsAnimal:string;
   skills: string;
+  volchoice: string;
+  timestamp: Date;
 
 }
