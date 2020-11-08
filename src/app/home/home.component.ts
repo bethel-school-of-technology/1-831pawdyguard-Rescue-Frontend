@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  home = {
+    slides = [
+      {'image': 'assets/images/pups.jpg'},
+      {'image': 'assets/images/puppies.jpg'},
+      {'image': 'assets/images/woman-rescue-dog-shelter.jpg'},
+      {'image': 'assets/images/paw-kitten.jpg'},
+      {'image': 'assets/images/adopt-me-sign.jpg'}
+  ];
 
-    subtitle: 'Established in 2018',
-    content: '',
-    image: 'assets/images/pitter.jpg'
-};
 
 public executeSelectedChange = (event) => {
   console.log(event);

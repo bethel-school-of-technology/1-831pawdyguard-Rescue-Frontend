@@ -24,16 +24,13 @@ import { DonationsComponent } from './donate/donations/donations.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
-
-import { SignupComponent } from './auth/signup/signup.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutComponent } from './layout/layout.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
-
-
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 
 
@@ -47,9 +44,6 @@ import { SharedModule } from './shared/shared.module';
     HomeComponent,
     FooterComponent,
     VolMainComponent,
-
-    LoginComponent,
-    SignupComponent,
     ErrorComponent,
     LayoutComponent,
     SidenavListComponent,
@@ -66,9 +60,10 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     AngularMaterialModule,
     AnimalsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
     AuthModule,
-    SharedModule
+    SharedModule,
+    MatCarouselModule
 
 
   ],
