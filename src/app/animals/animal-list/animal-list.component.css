@@ -16,11 +16,13 @@ mat-paginator {
 }
 
 .info-text {
-  padding-left: 4rem;
+  padding-left: 1rem;
 }
 
 .thumb-image {
-  width: 4rem;
+  width: 5rem;
+  padding-left: 4rem;
+  padding-right: 2rem;
 }
 
 .animal-image {
@@ -28,7 +30,7 @@ mat-paginator {
 }
 
 .animal-image img {
-  width: 50%;
+  width: 100%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 

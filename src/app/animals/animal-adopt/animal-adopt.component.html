@@ -1,0 +1,43 @@
+<div class="outer-form-container">
+
+  <form class="input-form" (submit)="onAdoptionRequest(af)" #af="ngForm">
+    <mat-card >
+      <mat-card-title>
+        <h4 class="p-title">Adopt an animal</h4>
+      </mat-card-title>
+      <mat-card-content fxLayout="row wrap">   
+      <mat-form-field class="form-field" fxFlex="45%" fxFlex.sm="80%" fxFlex.xs="80%">
+        <mat-label>First Name</mat-label> 
+        <input matInput type="text" name="fname" ngModel required minlength="2" placeholder="First Name"
+          #fnInput="ngModel">
+        <mat-error *ngIf="fnInput.invalid">Please enter a first name</mat-error>
+
+      </mat-form-field>
+      <mat-form-field class="form-field" fxFlex="45%" fxFlex.sm="80%" fxFlex.xs="80%">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" name="lname" ngModel required minlength="2" placeholder="Last Name"
+          #lnInput="ngModel">
+        <mat-error *ngIf="lnInput.invalid">Please enter a last name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="80%" fxFlex.xs="80%">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" name="email" ngModel required placeholder="youremail@example.com"
+          #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.invalid">Please enter an email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="80%" fxFlex.xs="80%">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" name="phone" ngModel required placeholder="Area Code + Phone Number"
+          #phoneInput="ngModel">
+        <mat-error *ngIf="phoneInput.invalid">Please enter phone number and area code</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent" type="submit">Apply for Adoption</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </form>
+</div>

@@ -14,6 +14,7 @@ import { DonationsComponent } from './donate/donations/donations.component';
 
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
 import { SignupComponent } from './auth/signup/signup.component'
+import { AnimalAdoptionComponent } from './animals/animal-adopt/animal-adopt.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'donations', component: DonationsComponent },
   { path: 'donations-form', component: DonationsFormComponent },
+  { path: 'adoption-form', component: AnimalAdoptionComponent }
 ];
 
 
