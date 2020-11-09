@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 
 import { AnimalsService } from '../animals.service';
 import { Animal } from '../animal.model';
-// import { mimeType } from './mime-type.validate';
+import { mimeType } from './mime-type.validate';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -35,14 +35,14 @@ export class AnimalCreateComponent implements OnInit, OnDestroy {
     .subscribe(() => {});
     this.form = new FormGroup({
       title: new FormControl(null, {
-        validators: [Validators.required, Validators.minLength(3)],
+        validators: [Validators.required, Validators.minLength(2)],
       }),
       content: new FormControl(null, {
         validators: [Validators.required],
       }),
       image: new FormControl(null, {
         validators: [Validators.required],
-        // asyncValidators: [mimeType],
+        asyncValidators: [mimeType],
       }),
     });
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -54,9 +54,8 @@ export class AnimalCreateComponent implements OnInit, OnDestroy {
             id: animalData._id,
             title: animalData.title,
             content: animalData.content,
-            imagePath: null,
+            imagePath: animalData.imagePath, //this imagePath!!
             creator: animalData.creator
-
           };
           this.form.setValue({
             title: this.animal.title,
@@ -75,6 +74,8 @@ export class AnimalCreateComponent implements OnInit, OnDestroy {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({ image: file });
     this.form.get('image').updateValueAndValidity();
+    console.log(file);
+    console.log(this.form);
     const reader = new FileReader();
     reader.onload = () => {
       this.imagePreview = reader.result as string;

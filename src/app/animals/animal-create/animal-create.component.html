@@ -1,24 +1,24 @@
 <h1>Animals Available for Adoption</h1>
+<hr>
 <mat-card>
-  <form [formGroup]="form" (submit)="onSaveAnimal()">
+  <form [formGroup]="form" enctype="multipart/form-data" (submit)="onSaveAnimal()">
     <mat-form-field>
-      <input matInput type="text" formControlName="title" placeholder="Animal's Name">
-      <mat-error *ngIf="form.get('title').invalid">Please Enter Animal's Name.</mat-error>
+      <input matInput type="text" formControlName="title" placeholder="Name of Animal">
+      <mat-error *ngIf="form.get('title').invalid">Please enter Name of Animal.</mat-error>
     </mat-form-field>
     <div>
-      <button mat-stroked-button type="button" (click)="imagePicker.click()">Pick Image</button>
-      <input type="file" accept=".png, .jpg, .jpeg" #imagePicker (change)="onImagePicked($event)">
+      <button mat-stroked-button type="button" (click)="imagePicker.click()">Pick an Image</button>
+      <input type="file" #imagePicker (change)="onImagePicked($event)">
     </div>
-    <!-- <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid"></div>     -->
-    <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
+    <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
       <img [src]="imagePreview" [alt]="form.value.title">
     </div>
     <mat-form-field>
-      <textarea matInput rows="4" formControlName="content" placeholder="Animal's Information"></textarea>
-      <mat-error *ngIf="form.get('content').invalid">Please enter the animal's information.</mat-error>
+      <textarea matInput rows="4" formControlName="content" placeholder="Information About this Animal"></textarea>
+      <mat-error *ngIf="form.get('content').invalid">Please enter information about this Animal.</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="accent" type="submit">Submit Animal </button>
+    <button mat-raised-button color="accent" type="submit">Save Animal Information</button>
   </form>
 </mat-card>
 
-<!-- enctype="multipart/form-data" -->
+<!-- accept=".png, .jpg, .jpeg" -->
