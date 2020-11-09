@@ -8,11 +8,11 @@ a:hover, a:active{
 }
 
 .navigation-items{
-
+ width: 100%;
   list-style-type: none;
   padding: 0;
-  margin: 0;
-
+  margin-left: 90px;
+ flex-wrap: wrap
 }
 
 mat-toolbar{
@@ -29,6 +29,7 @@ mat-toolbar{
 .rescue_nav {
   font-family: Garamond;
   font-size: 35px;
+  flex-wrap: wrap
 }
 
 li {
