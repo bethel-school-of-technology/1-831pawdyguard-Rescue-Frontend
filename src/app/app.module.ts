@@ -4,35 +4,33 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-
-import { AngularMaterialModule } from './material.module';
-
-import { AppComponent } from './app.component';
-import { HeaderComponent } from '../app/navigation/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AngularMaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AnimalsModule } from './animals/animals.module';
+import { AuthModule } from './auth/auth.module';
+
+import { AppComponent } from './app.component';
+
+import { HeaderComponent } from '../app/navigation/header/header.component';
 
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
 
 import { AppFormComponent } from './volunteer/app-form/app-form.component';
+import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 import { DonationsFormComponent } from './donate/donations-form/donations-form.component';
 import { DonationsComponent } from './donate/donations/donations.component';
-
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { VolMainComponent } from './volunteer/vol-main/vol-main.component';
 
-import { SharedModule } from './shared/shared.module';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutComponent } from './layout/layout.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';   
-
-import { AuthModule } from './auth/auth.module';
+import { AnimalAdoptionComponent } from './animals/animal-adopt/animal-adopt.component';
 
 
 
@@ -51,7 +49,8 @@ import { AuthModule } from './auth/auth.module';
     ErrorComponent,
     LayoutComponent,
     SidenavListComponent,
-    ErrorComponent
+    ErrorComponent,
+    AnimalAdoptionComponent
   ],
 
   imports: [
@@ -64,8 +63,7 @@ import { AuthModule } from './auth/auth.module';
     AngularMaterialModule,
     AnimalsModule,
     FlexLayoutModule,
-    SharedModule,
-    MatCarouselModule
+    MatCarouselModule,
     AuthModule
 
   ],
