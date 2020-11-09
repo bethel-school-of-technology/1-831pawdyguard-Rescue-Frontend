@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 
 import { Animal } from './animal.model';
 
+const BACKEND_URL = "http://localhost:3000/api/animals/";
+
 @Injectable({ providedIn: 'root' })
 export class AnimalsService {
   private animals: Animal[] = [];
@@ -18,7 +20,7 @@ export class AnimalsService {
     const queryParams = `?pagesize=${animalsPerPage}&page=${currentPage}`;
     this.http
     .get<{ message: string; animals: any; maxAnimals: number }>(
-      "http://localhost:3000/api/animals" + queryParams
+      BACKEND_URL + queryParams
       )
     .pipe(map((animalData) => {
       return {
@@ -31,7 +33,7 @@ export class AnimalsService {
             creator: animal.creator
           };
         }),
-        maxAnimals: animalData.maxAnimals
+        maxAnimals: animalData.maxAnimals,
       };
     })
     )
@@ -55,7 +57,7 @@ export class AnimalsService {
       content: string;
       imagePath: string;
       creator: string;
-    }>('http://localhost:3000/api/animals/' + id);
+    }>(BACKEND_URL + id);
   }
 
   addAnimal(title: string, content: string, image: File) {
@@ -63,7 +65,7 @@ export class AnimalsService {
     animalData.append("title", title);
     animalData.append("content", content);
     animalData.append("image", image, title);
-    this.http.post<{ message: string, animal: Animal }>('http://localhost:3000/api/animals', animalData)
+    this.http.post<{ message: string, animal: Animal }>(BACKEND_URL, animalData)
     .subscribe(responseData => {
       this.router.navigate(['animal-list']);  //check for correct routing '/'
     });
@@ -71,7 +73,7 @@ export class AnimalsService {
 
   updateAnimal(id: string, title: string, content: string, image: File | string ) {
     let animalData: Animal | FormData;
-    if (typeof image ==="object") {
+    if (typeof image === "object") {
       animalData = new FormData();
       animalData.append("id", id);
       animalData.append("title", title);
@@ -87,13 +89,13 @@ export class AnimalsService {
       };
     }
     this.http
-    .put('http://localhost:3000/api/animals/' + id, animalData)
+    .put(BACKEND_URL + id, animalData)
       .subscribe(response => {
         this.router.navigate(["animal-list"]);
       });
   }
 
   deleteAnimal(animalId: string) {
-    return this.http.delete('http://localhost:3000/api/animals/' + animalId)
+    return this.http.delete(BACKEND_URL + animalId);
   }
 }
