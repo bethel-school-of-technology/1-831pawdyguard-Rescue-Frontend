@@ -8,12 +8,15 @@ a:hover, a:active{
 }
 
 .navigation-items{
+
   list-style-type: none;
   padding: 0;
   margin: 0;
+
 }
 
 mat-toolbar{
+
   border-radius: 3px;
 }
 
@@ -23,12 +26,11 @@ mat-toolbar{
   }
 }
 
-.spacer {
-flex: 1 1 auto;
+.rescue_nav {
+  font-family: Garamond;
+  font-size: 35px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+li {
+float: right;
 }
