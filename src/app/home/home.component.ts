@@ -9,10 +9,8 @@ export class HomeComponent implements OnInit {
 
     slides = [
       {'image': 'assets/images/pups.jpg'},
-      {'image': 'assets/images/puppies.jpg'},
       {'image': 'assets/images/woman-rescue-dog-shelter.jpg'},
-      {'image': 'assets/images/paw-kitten.jpg'},
-      {'image': 'assets/images/adopt-me-sign.jpg'}
+      {'image': 'assets/images/cat-adopt-me-sign.jpg'},
   ];
 
 
