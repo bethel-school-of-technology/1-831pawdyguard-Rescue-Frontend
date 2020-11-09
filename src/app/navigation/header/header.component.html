@@ -33,6 +33,9 @@
           <li>
             <button *ngIf="userIsAuthenticated" mat-button (click)="onLogout()">LOGOUT</button>
           </li>
+          <li>
+            <a mat-button routerLink="/adoption-form" routerLinkActive="mat-accent">Adopt Form</a>
+          </li>
 
       </ul>
   </div>
