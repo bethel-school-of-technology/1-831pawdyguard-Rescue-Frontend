@@ -1,10 +1,17 @@
+.content {
+  padding-bottom: 1.5rem;
+ }
+
+.container-outer {
+  max-width: 1200px;
+  margin-top: 1rem;
+}
+
 mat-card{
   margin-top: 2rem;
-  width:50%;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
+
 mat-card-image{
   width:50%;
   height:auto;
@@ -12,9 +19,13 @@ mat-card-image{
 img-cont{
   width:80%;
 }
+.welcome-card {
+  margin-right: 1.5rem;
+}
+
 #quote{
   padding: 2px;
-  color: palevioletred;
+  color: rgb(145, 37, 207);
   font-weight: 800;
-
 }
+

@@ -1,7 +1,7 @@
 import { NgForm } from '@angular/forms';
 import { Component } from '@angular/core';
 import { DonorService } from './donor.service';
-//import { _MatTabBodyBase } from '@angular/material/tabs';
+
 
 @Component({
   selector: 'app-donations-form',
@@ -11,11 +11,11 @@ import { DonorService } from './donor.service';
 
 
 export class DonationsFormComponent {
- enteredValue = '';
  timestamp = new Date();
  hasStreetAdd = false;
 
- constructor(public donorService: DonorService){}
+
+constructor(public donorService: DonorService){}
 
 
 
@@ -44,16 +44,15 @@ export class DonationsFormComponent {
   }
 
   underConstruction() {
-    alert(`  Under Construction - This function will be available soon!
+    alert(`  Under Construction - 
+    
+    Donating through PayPal will be available soon!
 
-    We have set up a couple of mobile giving options for you 
+    For now we have set up a couple of mobile giving options for you 
     like Venmo and Zelle.
     Infos and download links are at the bottom of the page.`);
   }
 
-
-
-  // End of class
 }
 
 

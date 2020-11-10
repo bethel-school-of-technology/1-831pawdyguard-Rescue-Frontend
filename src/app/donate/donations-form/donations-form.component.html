@@ -15,7 +15,7 @@
       <input matInput type="text" name="lname" ngModel minlength="2" required placeholder="Last Name" #lname="ngModel">
       <mat-error *ngIf="lname.invalid">Please enter a last name</mat-error>
     </mat-form-field>
-    <!--  ? work over Format  street2 is not displaying right -->
+   
 
     <div class="visible"> 
     <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
@@ -61,7 +61,7 @@
 
     <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
       <mat-label>Email</mat-label>
-      <input matInput type="text" name="email" ngModel required placeholder="E-Mail" #email="ngModel">
+      <input matInput type="text" name="email" ngModel required email placeholder="E-Mail" #email="ngModel">
       <mat-error *ngIf="email.invalid">Please enter an email</mat-error>
     </mat-form-field>
 
@@ -74,12 +74,13 @@
       <mat-error *ngIf="phoneInput.invalid">Please enter phone number and area code</mat-error>
     </mat-form-field>
 
-    <div class="row">
+    <div class="row" fxFlex="70%" fxFlex.sm="70%" fxFlex.xs="100%">
       <div class="col">
         <mat-radio-group name="wantsLetter" ngModel #wantsLetter="ngModel">
           <div>
-            <mat-label>Do you want a donor acknowledgment letter? <span
-                matTooltip="Donors giving more than $250 in a single contribution to a tax-exempt nonprofit organization need a written acknowledgment from the organization to claim that deduction on their individual income tax return.">
+            <mat-label class="wletter">Do you want a donor acknowledgment letter? <span
+                matTooltip="Donors giving more than $250 in a single contribution to a tax-exempt 
+                nonprofit organization need a written acknowledgment from the organization to claim that deduction on their individual income tax return.">
                 <mat-icon>info_outline</mat-icon>
               </span> </mat-label>
           </div>
