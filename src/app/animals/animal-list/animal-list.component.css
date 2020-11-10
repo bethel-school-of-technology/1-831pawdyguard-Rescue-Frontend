@@ -16,11 +16,13 @@ mat-paginator {
 }
 
 .info-text {
-  padding-left: 4rem;
+  padding-left: 1rem;
 }
 
 .thumb-image {
-  width: 4rem;
+  width: 5rem;
+  padding-left: 4rem;
+  padding-right: 2rem;
 }
 
 .animal-image {
