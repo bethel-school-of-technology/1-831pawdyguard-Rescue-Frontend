@@ -33,9 +33,7 @@ export class AuthService {
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
   }
-/* is our user authenticated?
-
-(BACKEND_URL + 'newDonor', donorData)      */
+/* is our user authenticated? */
 
 /*called by signup*/
   createUser(email: string, password: string) {
