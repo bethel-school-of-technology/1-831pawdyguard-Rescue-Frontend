@@ -27,8 +27,6 @@
   flex: 1;
   margin-right: 20px;
 }
-
-
 p {
  margin-top: 1rem;
  padding:0.5rem;
@@ -48,13 +46,14 @@ p {
 .online-giving {
   margin-left: 2rem;
   max-width: 55%;
-  /* border: solid 1px blue; */
   margin-top: 3rem;
 }
 .eph1 {
   font-size: 0.8rem;
 }
-
+.wletter{
+  width:100%;
+}
 .mobile-title{
   color: rgb(55, 0, 128);
 }
