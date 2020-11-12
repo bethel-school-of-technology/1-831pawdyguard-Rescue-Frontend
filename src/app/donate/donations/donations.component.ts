@@ -21,6 +21,8 @@ category = [
   { id: 8, desc:'Vaccination'}
 ];
 
+flipped = false;
+
 }
 
 

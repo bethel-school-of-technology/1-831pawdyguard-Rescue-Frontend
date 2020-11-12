@@ -29,7 +29,7 @@ export class AuthService {
   getUserId() {
     return this.userId;
   }
-  /*Listener to react to changes */
+  /*Listener to react to changes: Is the user logged in or not?*/
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
   }
@@ -51,7 +51,7 @@ export class AuthService {
     this.http.post<{ token: string; expiresIn: number; userId: string }>(
       BACKEND_URL + 'user/login', authData)
       .subscribe(response => {
-        console.log(response);
+        //console.log(response);
         const token = response.token;
         this.token = token; //storing token in the service
         if (token) {
@@ -114,7 +114,6 @@ export class AuthService {
   }
 
   private clearAuthData() {
-    console.log('AuthService: clearAuthData called');
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
     localStorage.removeItem('userId');
