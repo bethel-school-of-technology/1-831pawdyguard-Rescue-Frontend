@@ -30,10 +30,10 @@ align-self: left;
   width:100%;
   height:auto;
 }
-/* little cards */
+/* little cards 
 .donation-purpose {
   max-width: 200px;
-} 
+} */
 .d-p-title {
   margin-left: 1rem;
 }
@@ -43,4 +43,49 @@ align-self: left;
 
 a {
   color: rgb(77, 0, 128);
+}
+
+
+/***********   */
+.card-container {
+  max-width: 200px;
+  height: auto;
+  position: relative;
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
+
+.flippable-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.flippable-card mat-card {
+  margin: 5%;
+  display: block;
+  position: absolute;
+  width: 252px;
+  height: 222px;
+  backface-visibility: hidden;
+}
+
+.flippable-card .story {
+  background: #f0f0f0;
+  transform: rotateY( 180deg );
+}
+
+.flippable-card.flipped {
+  transform: rotateY( 180deg );
+}
+.img-cont {
+  width:20%;
+  
+}
+.h-st {
+  width:75%;
+  font-size: small;
+  float:right;
 }

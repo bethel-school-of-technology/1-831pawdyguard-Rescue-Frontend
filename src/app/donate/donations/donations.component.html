@@ -5,6 +5,7 @@
     <mat-card class="pitter-card mat-elevation-z1" fxFlex="60%" fxFlex.sm="100%" fxFlex.xs="100%">
       <mat-card-header>
         <img id="iheader" mat-card-avatar src="./../../../assets/images/pitter.jpg" alt="Pitter, a rescued cat">
+
         <mat-card-title>Hi, my name is Pitter!</mat-card-title>
         <mat-card-subtitle>My first blog...</mat-card-subtitle>
       </mat-card-header>
@@ -84,7 +85,7 @@
           </mat-card-header>
 
           <mat-card-content>
-            <p>  </p>
+            <p> </p>
           </mat-card-content>
           <!-- maybe have the cards flip with some more infos on the back?
         <mat-card-actions>
@@ -93,6 +94,33 @@
         </mat-card>
       </div>
 
+    </div>
+
+    <div class='card-container'>
+      <div class='flippable-card' [ngClass]="{'flipped':flipped}" (click)='flipped = !flipped'>
+        <mat-card class=''>
+          <mat-card-title>Honey</mat-card-title>
+          <mat-card-subtitle>A success Story</mat-card-subtitle>
+          <mat-card-content>
+            <img mat-card-image src="./../../../assets/images/Honey.png" alt="Honey, a nearly euthanised dog ">
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-card class='story'>
+          <mat-card-subtitle>Healed and lovely</mat-card-subtitle>
+          <mat-card-content > 
+            <div >
+              <img class="img-cont" src="./../../../assets/images/before-treatment.jpeg" alt="Honey, a nearly euthanised dog ">
+           
+              <section class="h-st" > When Honey came to us she was deaf, with stuff growing in her ears. The former owner nearly euthanised her, 
+              because she was sick. We treated her with steroids for 3 month and the ears healed. 
+              She is the sweetest Dog and no longer in pain.
+              
+            </section>
+          </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
 
   </div>

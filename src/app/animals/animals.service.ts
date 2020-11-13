@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 
 import { Animal } from './animal.model';
 
-const BACKEND_URL = "http://localhost:3000/api/animals/";
+import { environment } from '../../environments/environment';
+const BACKEND_URL = environment.apiURL + 'animals/';
 
 @Injectable({ providedIn: 'root' })
 export class AnimalsService {

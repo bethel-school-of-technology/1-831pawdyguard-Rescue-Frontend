@@ -50,6 +50,7 @@ export class AppFormComponent implements OnInit {
       this.timestamp
       );
     form.resetForm();
+    alert('Thank you, for your time! We will contact you soon!');
   }
 
 
