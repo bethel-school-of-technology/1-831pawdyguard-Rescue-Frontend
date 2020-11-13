@@ -30,8 +30,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 import { LayoutComponent } from './layout/layout.component';
 
-import { AuthModule } from './auth/auth.module';
-import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';   
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { AnimalAdoptionComponent } from './animals/animal-adopt/animal-adopt.component';
 
 @NgModule({

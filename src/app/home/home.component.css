@@ -1,11 +1,5 @@
 
-
-/* html, body{
-  height:100%;
-  position:relative;
-} */
-
- mat-tab-group {
+mat-tab-group {
   text-align: center;
   padding-top: 50px;
 }
@@ -36,9 +30,11 @@ section div + p{
 h2 {
   margin-top: 2em;
 }
- a {
+
+a {
   font-size: 20px;
- }
+}
+
 .snip {
   margin-top: -2rem;
 }
