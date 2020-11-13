@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AnimalsModule } from './animals/animals.module';
-import { AuthModule } from './auth/auth.module';
 
 import { AppComponent } from './app.component';
 
@@ -29,7 +28,12 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 import { LayoutComponent } from './layout/layout.component';
 
+
+
+
+
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';   
+
 
 import { AnimalAdoptionComponent } from './animals/animal-adopt/animal-adopt.component';
 
