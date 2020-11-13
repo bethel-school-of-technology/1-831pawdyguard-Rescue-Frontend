@@ -1,5 +1,4 @@
 
-
 html, body{
   height:100%;
   position:relative;
@@ -21,6 +20,7 @@ section div p{
 } */
 
  mat-tab-group {
+
   text-align: center;
   padding-top: 50px;
 }
@@ -60,8 +60,6 @@ mat-tab-group p {
     margin-top: -2rem;
   }
 
-
-
   /* Fees Tab */
 
 .container {
@@ -95,6 +93,7 @@ h2 {
 h3{
   margin-top: 2em;
   font-weight: bold;
+
 }
 #cat {
 float: left;
@@ -102,9 +101,7 @@ float: left;
 }
 #dog {
   float: right;
-
 }
-
 
 /* .para {
   font-size: 35px ;
