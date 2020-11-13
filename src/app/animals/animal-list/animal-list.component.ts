@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { Animal } from '../animal.model';
 import { AnimalsService } from '../animals.service';
 import { NgForm } from '@angular/forms';
+import { AdoptionService } from '../animal-adopt/adoption.service';
+
 
 
 @Component({
@@ -28,8 +30,9 @@ export class AnimalListComponent implements OnInit, OnDestroy {
   userId: string;
   private animalsSub: Subscription;
   private authStatusSub: Subscription;
+  timestamp = new Date();
 
-  constructor(public animalsService: AnimalsService, private authService: AuthService) {}
+  constructor(public animalsService: AnimalsService, private authService: AuthService, public adoptionService: AdoptionService) {}
 
   ngOnInit() {
     this.animalsService.getAnimals(this.animalsPerPage, this.currentPage);
@@ -62,9 +65,20 @@ export class AnimalListComponent implements OnInit, OnDestroy {
     );
   }
 // ************
-onAdoptRequest(form: NgForm){
-  console.log('Request for adoption sent');
+onAdoptionRequest(form: NgForm) {
+  if (form.invalid) {
+    return;
+  }
+  this.adoptionService.requestAdoption(
+    form.value.fname, 
+    form.value.lname, 
+    form.value.email, 
+    form.value.phone,
+    this.timestamp
+    );
+  form.resetForm();
 }
+
 // ******
   ngOnDestroy() {
     this.animalsSub.unsubscribe();

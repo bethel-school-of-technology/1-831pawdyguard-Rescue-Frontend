@@ -4,7 +4,9 @@ import { Router } from "@angular/router";
 import { Subject } from 'rxjs';
 
 import { AuthData } from "./auth-data.model";
+import { environment } from '../../environments/environment';
 
+const BACKEND_URL = environment.apiURL;
 
 @Injectable({ providedIn: "root" })
 export class AuthService {
@@ -13,13 +15,13 @@ export class AuthService {
   private tokenTimer: any;
   private userId: string;
   private authStatusListener = new Subject<boolean>();
- 
+
   constructor(private http: HttpClient, private router: Router) { }
 
   getToken() {
     return this.token;
   }
-/* is our user authenticated?*/
+  /* is our user authenticated?*/
   getIsAuth() {
     return this.isAuthenticated;
   }
@@ -27,18 +29,16 @@ export class AuthService {
   getUserId() {
     return this.userId;
   }
-
+  /*Listener to react to changes: Is the user logged in or not?*/
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
   }
-/* is our user authenticated?*/
+  /* is our user authenticated? */
 
-
-
-/*called by signup*/
+  /*called by signup*/
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
-    this.http.post('http://localhost:3000/api/user/signup', authData)
+    this.http.post(BACKEND_URL + 'user/signup', authData)
       .subscribe(response => {
         this.router.navigate(['/']);
       }, error => {
@@ -49,9 +49,9 @@ export class AuthService {
   login(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     this.http.post<{ token: string; expiresIn: number; userId: string }>(
-      "http://localhost:3000/api/user/login", authData)
+      BACKEND_URL + 'user/login', authData)
       .subscribe(response => {
-        console.log(response);
+        //console.log(response);
         const token = response.token;
         this.token = token; //storing token in the service
         if (token) {
@@ -114,7 +114,6 @@ export class AuthService {
   }
 
   private clearAuthData() {
-    console.log('AuthService: clearAuthData called');
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
     localStorage.removeItem('userId');

@@ -1,54 +1,108 @@
 
-mat-tab-group {
-  text-align: center;
-  padding-top: 50px;
-}
-mat-tab-group p {
-  padding-top: 40px;
-}
-.para {
-  font-size: 35px ;
-}
-
-.container {
-  width: auto;
+html, body{
+  height:100%;
+  position:relative;
 }
 
 section div p{
   color: #3f51b5;
   font-size: 30px;
+
   text-shadow: 2px 3px 5px grey;
   margin: 40px 0;
 }
 
-section div + p{
+/* section div + p{
   color: #3f51b5;
   font-weight: bold;
   font-size: 20px;
   padding-bottom: 20px;
+} */
+
+ mat-tab-group {
+
+  text-align: center;
+  padding-top: 50px;
 }
+/* About Tab */
+mat-tab-group p {
+  padding-top: 40px;
+}
+.about {
+  flex-wrap: wrap
+}
+
+/* Contact Tab */
+
+.contact {
+  margin-top: 2em;
+  font-weight: bolder;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+
+}
+#address {
+  float: left;
+  margin-right: 30px;
+  }
+
+#phone {
+  float: left;
+    }
+
+   /* Local Resources Tab */
+
+   a {
+    font-size: 20px;
+   }
+  .snip {
+    margin-top: -2rem;
+  }
+
+  /* Fees Tab */
+
+.container {
+  display: flex;
+  /* width: auto; */
+  /* margin-left: 50px; */
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.divider {
+  width: 1px;
+  background-color: black;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 2cm;
+}
+
+ul {
+  margin-top: -10px;
+  display: inline-block;
+  text-align:left;
+}
+
 h2 {
   margin-top: 2em;
 }
 
-a {
-  font-size: 20px;
-}
+h3{
+  margin-top: 2em;
+  font-weight: bold;
 
-.snip {
-  margin-top: -2rem;
 }
-/* .div0{
-  margin: auto;
-} */
-#div3 {
-text-align: center;
+#cat {
 float: left;
-margin-left: 36em;
+
+}
+#dog {
+  float: right;
 }
 
-#div4 {
-text-align: center;
-/* float: right; */
-margin-right: 24em;
-  }
+/* .para {
+  font-size: 35px ;
+} */

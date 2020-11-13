@@ -4,7 +4,7 @@
           <mat-icon>menu</mat-icon>
       </button>
   </div>
-  <div>
+  <div >
       <a class=rescue_nav routerLink="/">831PAWDYGUARD RESCUE</a>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
@@ -33,10 +33,6 @@
           <li>
             <button *ngIf="userIsAuthenticated" mat-button (click)="onLogout()">LOGOUT</button>
           </li>
-          <li>
-            <a mat-button routerLink="/adoption-form" routerLinkActive="mat-accent">Adopt Form</a>
-          </li>
-
       </ul>
   </div>
 </mat-toolbar>

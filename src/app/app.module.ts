@@ -25,12 +25,12 @@ import { DonationsFormComponent } from './donate/donations-form/donations-form.c
 import { DonationsComponent } from './donate/donations/donations.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 import { LayoutComponent } from './layout/layout.component';
 
-import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';   
+
 import { AnimalAdoptionComponent } from './animals/animal-adopt/animal-adopt.component';
 
 @NgModule({

@@ -1,32 +1,32 @@
 <div class="form-bg">
 
-
   <div class="outer-form-container">
     <h2>Volunteer Information</h2>
+    <p>Thank's for taking the time to introduce yourself!</p>
     <div class="form-container">
 
-      <!-- Template driven form -->
-      <!-- Submit event with #local reference -->
+      <!-- Submit event with #local reference to form object-->
       <form class="input-form" (submit)="onAddVolunteer(vF)" #vF="ngForm" fxLayout="row wrap">
         <p class="title-tag">Name </p>
 
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>First Name</mat-label>
-          <input matInput type="text" name="fname" ngModel minlength="2" placeholder="First Name" #fnInput="ngModel"
-            required>
+          <input matInput type="text" name="fname" ngModel required minlength="2" placeholder="First Name"
+            #fnInput="ngModel" required>
           <mat-error *ngIf="fnInput.invalid">Please enter a first name</mat-error>
 
         </mat-form-field>
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>Last Name</mat-label>
-          <input matInput type="text" name="lname" ngModel minlength="2" placeholder="Last Name" #lnInput="ngModel">
+          <input matInput type="text" name="lname" ngModel required minlength="2" placeholder="Last Name"
+            #lnInput="ngModel">
           <mat-error *ngIf="lnInput.invalid">Please enter a last name</mat-error>
         </mat-form-field>
 
         <p class="title-tag">Address</p>
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>Street</mat-label>
-          <input matInput type="text" name="street" ngModel placeholder="Street" #strInput="ngModel">
+          <input matInput type="text" name="street" ngModel required placeholder="Street" #strInput="ngModel">
           <mat-error *ngIf="strInput.invalid">Please enter a street</mat-error>
         </mat-form-field>
 
@@ -38,19 +38,21 @@
 
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>City</mat-label>
-          <input matInput type="text" name="city" ngModel placeholder="City" #cityInput="ngModel">
+          <input matInput type="text" name="city" ngModel required placeholder="City" #cityInput="ngModel">
           <mat-error *ngIf="cityInput.invalid">Please enter a city</mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>State / Province</mat-label>
-          <input matInput type="text" name="state" ngModel placeholder="State or Province" #stateInput="ngModel">
+          <input matInput type="text" name="state" ngModel required placeholder="State or Province"
+            #stateInput="ngModel">
           <mat-error *ngIf="stateInput.invalid">Please enter a state or province</mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>Postal Zip</mat-label>
-          <input matInput type="text" name="zip" ngModel maxlength="5" placeholder="Zip Code" #zipInput="ngModel">
+          <input matInput type="text" name="zip" ngModel required maxlength="5" placeholder="Zip Code"
+            #zipInput="ngModel">
           <mat-error *ngIf="zipInput.invalid">Please enter a valid zip code</mat-error>
         </mat-form-field>
 
@@ -58,14 +60,16 @@
         <p class="title-tag">Email</p>
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>Email</mat-label>
-          <input matInput type="text" name="email" ngModel placeholder="youremail@example.com" #emailInput="ngModel">
+          <input matInput type="text" name="email" ngModel required email placeholder="youremail@example.com"
+            #emailInput="ngModel">
           <mat-error *ngIf="emailInput.invalid">Please enter an email</mat-error>
         </mat-form-field>
 
         <p class="title-tag">Phone Number</p>
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%">
           <mat-label>Phone Number</mat-label>
-          <input matInput type="text" name="phone" ngModel placeholder="Area Code + Phone Number" #phoneInput="ngModel">
+          <input matInput type="text" name="phone" ngModel required placeholder="Area Code + Phone Number"
+            #phoneInput="ngModel">
           <mat-error *ngIf="phoneInput.invalid">Please enter phone number and area code</mat-error>
         </mat-form-field>
 
@@ -74,7 +78,7 @@
 
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%" appearance="outline">
           <mat-label>Tell us something about you</mat-label>
-          <textarea matInput rows="6" name="details" ngModel placeholder="Your ability to volunteer..."
+          <textarea matInput rows="6" name="details" ngModel required placeholder="Your ability to volunteer..."
             #detailsInput="ngModel"></textarea>
         </mat-form-field>
 
@@ -91,7 +95,7 @@
 
         <mat-form-field class="form-field" fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="100%" appearance="outline">
           <mat-label>Do you have experience with pet-care or animal welfare?</mat-label>
-          <textarea matInput rows="6" name="skills" ngModel placeholder="Please describe..."
+          <textarea matInput rows="6" name="skills" ngModel required placeholder="Please describe..."
             #expInput="ngModel"></textarea>
         </mat-form-field>
 
@@ -100,22 +104,22 @@
         <mat-label class="title-check">What would you like to do?</mat-label>
         <section class="form-group form-check" fxLayout="row wrap">
 
-          <mat-checkbox fxFlex="100%" name="foster" id="fosterid" class="form-check-input" [(ngModel)]="model.foster"
-            #foster="ngModel"> Foster </mat-checkbox>
-          <mat-checkbox fxFlex="100%" name="fundraising" id="fundrid" class="form-check-input"
-            [(ngModel)]="model.fundraising" #foster="ngModel">Fundraising</mat-checkbox>
-          <mat-checkbox fxFlex="100%" name="transport" [(ngModel)]="model.transport" #foster="ngModel">Transport
+          <mat-checkbox fxFlex="100%" name="foster"  class="form-check-input" 
+                  [(ngModel)]="model.foster" #foster="ngModel"> Foster </mat-checkbox>
+          <mat-checkbox fxFlex="100%" name="fundraising"  class="form-check-input"
+                  [(ngModel)]="model.fundraising" #fundraising="ngModel">Fundraising</mat-checkbox>
+          <mat-checkbox fxFlex="100%" name="transport" 
+                  [(ngModel)]="model.transport" #transport="ngModel">Transport
           </mat-checkbox>
-          <mat-checkbox fxFlex="100%" name="admin" id="adminid" class="form-check-input" [(ngModel)]="model.admin"
-            #foster="ngModel">Administration</mat-checkbox>
+          <mat-checkbox fxFlex="100%" name="admin" class="form-check-input" 
+                  [(ngModel)]="model.admin" #admin="ngModel">Administration</mat-checkbox>
         </section>
 
-
         <br>
-
-        <p class="title-tag">Thank you, for your time!</p>
-        <!-- form footer / end -->
-        <button class="btn-f" mat-raised-button color="accent" type="submit" [disabled]="!vF.form.valid">Submit Application</button>
+        <p class="title-tag">Thank you for filling out the application form!</p>
+        <!-- buttons -->
+        <button class="btn-f" mat-raised-button color="accent" type="submit" [disabled]="!vF.form.valid">Submit
+          Application</button>
         <button class="btn-f" mat-raised-button color="basic" type="button" (click)="vF.resetForm()">Cancel</button>
         <!-- -->
       </form>
